@@ -1,0 +1,33 @@
+<div class="whtlst-shorting-section">
+    
+    <div class="whtlst-shorting-col">
+        <app-search-box></app-search-box>
+    </div>
+    
+    <div class="whtlst-shorting-col">
+        <ng-multiselect-dropdown
+            class="normal single storting-type"
+            [placeholder]="'Select'"
+            [settings]="filetypedropdownSettings"
+            [data]="filetypenameList"
+            [(ngModel)]="selectedfiletypenameItems"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+        >
+        </ng-multiselect-dropdown>
+    </div>
+
+    <div class="whtlst-shorting-col">
+        <ng-multiselect-dropdown
+            class="normal single storting-type"
+            [placeholder]="'Select'"
+            [settings]="perpagedropdownSettings"
+            [data]="perpagenameList"
+            [(ngModel)]="selectedperpagenameItems"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+        >
+        </ng-multiselect-dropdown>
+    </div>
+
+</div>

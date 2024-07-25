@@ -8,6 +8,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AmcCardComponent } from './components/amc-card/amc-card.component';
 import { CreatedFilterComponent } from './components/created-filter/created-filter.component';
+import { ShortingFilterComponent } from './components/shorting-filter/shorting-filter.component';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { CreatedFilterComponent } from './components/created-filter/created-filt
     LayoutComponent,
     HomeComponent,
     AmcCardComponent,
-    CreatedFilterComponent
+    CreatedFilterComponent,
+    ShortingFilterComponent,
+    SearchBoxComponent
   ],
   imports: [
     CommonModule,

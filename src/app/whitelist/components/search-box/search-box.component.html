@@ -1,0 +1,15 @@
+<div class="whtlst-srch-box" [ngClass]="{'expanded': searchExpanded }" >
+    <div class="whtlst-srch-fld">
+        <ng-multiselect-dropdown
+            class="normal single"
+            [placeholder]="'Global Search on Filename'"
+            [settings]="searchdropdownSettings"
+            [data]="searchnameList"
+            [(ngModel)]="selectedsearchnameItems"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+        >
+        </ng-multiselect-dropdown>
+    </div>
+    <button class="whtlst-srch-btn" (click)="searchAction()"><img src="./assets/images/whitelist-search-icon.svg" /></button>
+</div>
