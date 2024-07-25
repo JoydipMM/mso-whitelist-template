@@ -1,0 +1,106 @@
+<div class="whtlst-filter-section">
+
+    <div class="whtlst-filter-lft-section">
+        <div class="whtlst-filter-box left-col-1">
+            <label class="whtlst-label-title">AMC Name</label>
+            <div class="whtlst-field-wrap">
+                <ng-multiselect-dropdown
+                    class="normal"
+                    [placeholder]="'Select AMC'"
+                    [settings]="amcdropdownSettings"
+                    [data]="amcnameList"
+                    [(ngModel)]="selectedamcnameItems"
+                    (onSelect)="onItemSelect($event)"
+                    (onSelectAll)="onSelectAll($event)"
+                >
+                </ng-multiselect-dropdown>
+            </div>
+        </div>
+        <div class="whtlst-filter-box left-col-2">
+            <div class="whtlst-filter-row">
+                <div class="whtlst-filter-col col-50">
+                    <div class="whtlst-filter-box normal">
+                        <label class="whtlst-label-title">Financial Year</label>
+                        <div class="whtlst-field-wrap">
+                            <ng-multiselect-dropdown
+                                class="normal twoline small-width"
+                                [placeholder]="'Select'"
+                                [settings]="amcFYeardropdownSettings"
+                                [data]="amcFYearList"
+                                [(ngModel)]="selectedamcFYearItems"
+                                (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)"
+                            >
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="whtlst-filter-col col-50">
+                    <div class="whtlst-filter-box normal">
+                        <label class="whtlst-label-title center">Quarter</label>
+                        <div class="whtlst-field-wrap">
+                            <ng-multiselect-dropdown
+                                class="normal twoline small-width"
+                                [placeholder]="'Select'"
+                                [settings]="amcQuarterdropdownSettings"
+                                [data]="amcQuarterList"
+                                [(ngModel)]="selectedamcQuarterItems"
+                                (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)"
+                            >
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="whtlst-filter-box left-col-3">
+            <div class="whtlst-filter-row">
+                <div class="whtlst-filter-col col-50">
+                    <div class="whtlst-filter-box normal">
+                        <label class="whtlst-label-title">Calendar Year</label>
+                        <div class="whtlst-field-wrap">
+                            <ng-multiselect-dropdown
+                                class="normal twoline small-width"
+                                [placeholder]="'Select'"
+                                [settings]="amcCldrYeardropdownSettings"
+                                [data]="amcCldrYearList"
+                                [(ngModel)]="selectedamcCldrYearItems"
+                                (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)"
+                            >
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="whtlst-filter-col col-50">
+                    <div class="whtlst-filter-box normal">
+                        <label class="whtlst-label-title center">Month</label>
+                        <div class="whtlst-field-wrap">
+                            <ng-multiselect-dropdown
+                                class="normal twoline small-width"
+                                [placeholder]="'Select'"
+                                [settings]="amcMonthdropdownSettings"
+                                [data]="amcMonthList"
+                                [(ngModel)]="selectedamcMonthItems"
+                                (onSelect)="onItemSelect($event)"
+                                (onSelectAll)="onSelectAll($event)"
+                            >
+                            </ng-multiselect-dropdown>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="whtlst-filter-rgt-section">
+        <div class="whtlst-filter-box normal vcenter">
+            <button class="whtlst-btn btn-xs">Go</button>
+            <button class="whtlst-btn default btn-xs">Reset</button>
+        </div>
+    </div>
+</div>
+
+

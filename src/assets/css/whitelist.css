@@ -5,6 +5,8 @@
 .whtlst-btn{ width: auto; min-width: 142px; height: 40px; display: inline-flex; align-items: center; justify-content: center; gap: 5px; color: #fff; font-size: 14px; font-weight: 700; border-radius: 9px; background: rgba(69, 143, 246, 1); border:rgba(69, 143, 246, 1) solid 1px; cursor: pointer; }
 .whtlst-btn:focus{ outline: none; }
 .whtlst-btn.danger{ background-color: rgba(212, 0, 0, 1); border-color: rgba(212, 0, 0, 1); }
+.whtlst-btn.default{ background-color: #EFF0F6; border-color: #EFF0F6; color: #3B56E6; }
+.whtlst-btn.btn-xs{ min-width: 56px; height: 27px; font-size: 12px; }
 .whtlst-setting-icon-btn{ width: auto; height: auto; padding: 0px; border: none; background: transparent; }
 .whtlst-setting-icon-btn>img{ width: 20px; }
 .whtlst-text-btn{ width: auto; display: inline-flex; align-items: center; gap: 5px; padding: 0px; border: none; background: transparent; color:rgba(0, 0, 0, 1); font-size: 12px; font-weight: 700; line-height: 1; cursor: pointer; }
@@ -65,3 +67,55 @@
 .whtlst-amc-card.published:hover .date{ display: inline-block; }
 .whtlst-amc-card.published:hover .whtlst-published-btn{ display: none; }
 /* amc card css ended */
+
+
+/* created amc filter section css start */
+.whtlst-filter-section{ width: 100%; display: inline-flex; position: relative; padding: 15px 0px 20px; column-gap: 22px; border-bottom: 1px solid #E2E2E2; }
+.whtlst-filter-lft-section{ flex: 1; display: inline-flex; column-gap: 9px; position: relative; }
+.whtlst-filter-rgt-section{ display: inline-flex; column-gap: 9px; position: relative; }
+.whtlst-filter-box{ width: 100%; flex-grow: 1; flex: 1; padding: 16px 12px 12px; display: inline-flex; flex-direction: column; align-items: flex-start; row-gap: 5px; border-radius: 5px; box-shadow: 0px 0px 15px 0px #00000017;}
+.whtlst-filter-box.normal{ box-shadow: none; padding: 0px; }
+.whtlst-filter-box.vcenter{ justify-content: center; }
+.left-col-1{ flex-grow: 1.5; }
+.whtlst-label-title{ width: 100%; padding: 0px; margin: 0px 0px 5px 0px; font-size: 12px; font-weight: 700; color: #000; line-height: 1.2; }
+.whtlst-label-title.center{ text-align: center; }
+.whtlst-field-wrap{ width: 100%; position: relative; }
+.whtlst-filter-row{ width: calc(100% + 6px); display: flex; flex: 1; position: relative; margin-left: -3px; margin-right: -3px; }
+.whtlst-filter-col{ display: inline-flex; flex-grow: 1; padding-left: 3px; padding-right: 3px;  }
+.whtlst-filter-col.col-50{ width: 50%; }
+/* created amc filter section css ended */
+
+
+/* multi select dropdown css start */
+.multiselect-dropdown{ border-radius: 5px; background-color: #EFF0F6; border-color: #EFF0F6; }
+.multiselect-dropdown .dropdown-btn{ border-color: #EFF0F6 !important; height: 42px; display: inline-flex !important; align-items: center; font-size: 11px !important; font-weight: 700 !important; color: #848484 !important; }
+.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ width: 32px !important;  background: url('./../images/dropdown-down-arrow.svg') no-repeat 15px 18px; }
+.multiselect-dropdown .dropdown-btn .dropdown-multiselect--active .dropdown-multiselect__caret{ background: url('./../images/dropdown-down-arrow.svg') no-repeat 4px 14px; }
+.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret:before{ display: none; }
+/* list box css */
+.multiselect-dropdown .dropdown-list{ min-width: 145px !important; border: none !important; padding-bottom: 10px !important; box-shadow: 0px 0px 15px 0px #00000017 !important; border-radius: 0px 0px 10px 10px !important; }
+.multiselect-dropdown .dropdown-list li{ font-size: 11px; font-weight: 500; line-height: 1.4; padding: 6px 15px 3px !important; }
+.multiselect-dropdown .dropdown-list .filter-textbox{ border: none !important; margin-bottom: 5px !important; }
+.multiselect-dropdown .dropdown-list .filter-textbox>input{ width: 100%; height: 36px !important; border-radius: 5px !important; padding: 10px 35px 10px 10px !important; border: 1px solid #C9D1FF !important; font-size: 12px !important; font-weight: 500 !important; color: #666666 !important; background: #fff url("./../images/whitelist-search-icon.svg") no-repeat 96% center; }
+.multiselect-dropdown .multiselect-item-checkbox input[type=checkbox] + div{ padding-left: 3em !important; }
+.multiselect-dropdown .multiselect-item-checkbox input[type=checkbox] + div:before{ border: 1px solid #458FF6 !important; border-radius: 4px !important; }
+.multiselect-dropdown .multiselect-item-checkbox input[type=checkbox]:checked + div:before{ background-color: #458FF6 !important; }
+.multiselect-dropdown .multiselect-item-checkbox input[type=checkbox] + div:after{ margin-top: -4px !important; border-width: 0 0 1px 1px !important; font-weight: 600; }
+/* normal */
+.normal .multiselect-dropdown .dropdown-btn .selected-item-container .selected-item{ max-width: 200px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding: 0px !important; margin: 0px !important; background: transparent !important; color: #848484 !important; border: none !important; }
+.normal .multiselect-dropdown .dropdown-btn .selected-item-container .selected-item:hover{ box-shadow: none !important; }
+.normal .multiselect-dropdown .dropdown-btn .selected-item-container .selected-item a{ display: none !important; }
+.normal .multiselect-dropdown .dropdown-btn .selected-item-container:nth-last-child(2)+span>span{ padding-right: 5px !important; margin-top: 5px; }
+.normal .multiselect-dropdown .dropdown-btn .selected-item-container:nth-last-child(2)+span:after{ content: 'More' !important; display: inline-block; margin-top: 5px; }
+.normal .multiselect-dropdown .dropdown-btn > span:last-child{ position: absolute; right: 5px; top: -1px; display: inline-flex !important; align-items: center !important; }
+.normal .multiselect-dropdown .dropdown-btn > span:last-child .dropdown-multiselect__caret{ position: relative !important; order: 3; }
+.twoline .multiselect-dropdown .dropdown-btn{ padding: 2px 12px !important; align-items: flex-start !important; }
+/* two line */
+.twoline .multiselect-dropdown .dropdown-btn > span:not(.selected-item-container):nth-child(1){ padding-top: 10px !important; }
+.twoline .multiselect-dropdown .dropdown-btn .selected-item-container:nth-last-child(2)+span>span{ margin-top: 22px; }
+.twoline .multiselect-dropdown .dropdown-btn .selected-item-container:nth-last-child(2)+span:after{ margin-top: 22px; }
+.twoline .multiselect-dropdown .dropdown-btn > span:last-child{ width: 82%; right: auto !important; }
+.normal.twoline .multiselect-dropdown .dropdown-btn > span:last-child .dropdown-multiselect__caret{ position: absolute !important; right: -3px !important; }
+/* small width */
+.small-width .multiselect-dropdown .dropdown-btn .selected-item-container .selected-item{ max-width: 100px; }
+/* multi select dropdown css ended */

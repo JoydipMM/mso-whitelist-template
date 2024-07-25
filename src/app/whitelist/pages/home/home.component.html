@@ -28,32 +28,13 @@
 
         <div class="whtlst-section">
 
-
-            <ng-multiselect-dropdown
-  [placeholder]="'custom placeholder'"
-  [settings]="dropdownSettings"
-  [data]="dropdownList"
-  (onSelect)="onItemSelect($event)"
-  (onSelectAll)="onSelectAll($event)"
->
-</ng-multiselect-dropdown>
-
-<!-- https://stackblitz.com/angular/nlpedgvrmbg?file=app%2Fcdk-drag-drop-connected-sorting-example.html -->
- <!-- https://stackblitz.com/edit/drag-drop-reorder-mattable-wxsxgm?file=src%2Fapp%2Fapp.component.ts -->
-  <!-- https://stackblitz.com/edit/angular-draggable-list-with-row-wrap?file=src%2Fapp%2Fapp.component.ts -->
-
-
-  <!-- https://stackblitz.com/edit/ng-reorder?file=src%2Fapp%2Fapp.component.scss,src%2Fapp%2Fapp.component.html -->
-
-
-
-  <!-- https://stackblitz.com/edit/angular-animation-on-array-item-addition?file=src%2Fapp%2Fapp.component.ts -->
-   <!-- https://stackblitz.com/edit/angular-animation-when-removing?file=src%2Fapp%2Fapp.component.ts -->
-
             <div class="whtlst-table-hdng">
                 <div class="hdng-title"><span>All Created File</span> <img src="assets/images/whitelist-popinfo-icon.svg" /></div>
                 <button class="whtlst-text-btn"><span>Unpublished All</span></button>
             </div>
+
+            <app-created-filter></app-created-filter>
+
             <div class="whtlst-created-box">
                 <div class="whtlst-amc-card-wrap">
                     <ul class="whtlst-amc-card-list">
