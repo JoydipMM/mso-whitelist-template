@@ -81,8 +81,8 @@
 
 
 /* amc card css start */
-.whtlst-amc-card{ width: calc(100% - 35px); height: 41px; border-radius: 8px; padding: 9px 12px; column-gap: 15px; position: relative; display: inline-flex; align-items: center; box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.09); background-color: #fff; transition: all ease-in-out 0.6s; }
-.whtlst-amc-card:hover{ background-color: rgba(241, 251, 255, 1); }
+.whtlst-amc-card{ width: calc(100% - 35px); height: 41px; border-radius: 8px; padding: 9px 12px; column-gap: 15px; position: relative; display: inline-flex; align-items: center; box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.09); background-color: #fff; transition: all ease-in-out 0.2s; }
+.whtlst-amc-card:hover{ background-color: rgba(241, 251, 255, 1); box-shadow: none; }
 .whtlst-amc-card .drag-col{ width: 24px; display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center; }
 .whtlst-amc-card .drag-icon{ width: 11px; }
 .whtlst-amc-card .mid-col{ flex: 1; column-gap: 20px; display: inline-flex; position: relative; align-items: center; justify-content: space-between; transition: all ease-in-out 0.5s; }
