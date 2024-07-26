@@ -1,6 +1,6 @@
 <div class="round-box">
                                         
-    <div class="whtlst-sctn">
+    <div class="whtlst-sctn mb-0">
         <div class="whtlst-sctn-hdng">
             <div></div>
             <div class="whtlst-btn-grp">
@@ -24,6 +24,9 @@
                     </ul>
                 </div>
             </div>
+            <div class="whtlst-pagination-sctn">
+                <ngb-pagination class="d-flex justify-content-end" [collectionSize]="50" [(page)]="publishedPerPage" ></ngb-pagination>
+            </div>
         </div>
 
         <div class="whtlst-section">
@@ -43,6 +46,10 @@
                 </div>
             </div>
         </div>
+        <div class="whtlst-pagination-sctn">
+            <ngb-pagination class="d-flex justify-content-end" [collectionSize]="50" [(page)]="createdPerPage" ></ngb-pagination>
+        </div>
+
     </div>
 
 

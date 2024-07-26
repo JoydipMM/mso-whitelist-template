@@ -10,7 +10,7 @@ import { AmcCardComponent } from './components/amc-card/amc-card.component';
 import { CreatedFilterComponent } from './components/created-filter/created-filter.component';
 import { ShortingFilterComponent } from './components/shorting-filter/shorting-filter.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
-
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
     CommonModule,
     SharedModule,
     WhitelistRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbPaginationModule,
   ],
   exports: [
     LayoutComponent,

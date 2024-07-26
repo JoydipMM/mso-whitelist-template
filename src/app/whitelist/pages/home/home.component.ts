@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,6 +7,8 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 })
 export class HomeComponent implements OnInit {
 
+  publishedPerPage = 10;
+  createdPerPage = 10;
 
   constructor() { }
 
