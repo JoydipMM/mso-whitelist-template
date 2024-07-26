@@ -135,6 +135,12 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 .whtlst-amc-card.published:hover .whtlst-published-btn{ display: none; }
 /* amc card css ended */
 
+/* no amc card css start */
+.whtlst-amc-nocard{ width: 100%; position: relative; display: inline-flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; padding: 45px 20px; }
+.whtlst-amc-nocard .nocard-icon{ width: 104px; margin-bottom: 25px; }
+.whtlst-amc-nocard .nocard-title{ font-size: 13px; font-weight: 700; color: rgba(0, 0, 0, 1); margin: 0px; padding: 0px; }
+/* no amc card css ended */
+
 
 /* created amc filter section css start */
 .whtlst-filter-section{ width: 100%; display: inline-flex; position: relative; padding: 15px 0px 20px; column-gap: 22px; border-bottom: 1px solid #E2E2E2; }

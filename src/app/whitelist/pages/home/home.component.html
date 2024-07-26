@@ -20,7 +20,21 @@
             <div class="whtlst-published-box">
                 <div class="whtlst-amc-card-wrap">
                     <ul class="whtlst-amc-card-list">
-                        <li><app-amc-card></app-amc-card></li>
+                        <ng-container *ngFor="let amc of demoamclist;">
+                            <li *ngIf="amc.published">
+                                <app-amc-card 
+                                    (unpublishEventEmitter)="displayUpdated($event)"
+                                    [amc]="amc">
+                                </app-amc-card>
+                            </li>
+                        </ng-container>
+                       
+                        <li *ngIf="falseCheck(demoamclist) == undefined">
+                            <div class="whtlst-amc-nocard">
+                                <img class="nocard-icon" src="assets/images/whitelist-amc-warning-icon.svg" />
+                                <h3 class="nocard-title">No PDF or Excel has been published as Whitelist</h3>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +55,15 @@
             <div class="whtlst-created-box">
                 <div class="whtlst-amc-card-wrap">
                     <ul class="whtlst-amc-card-list">
-                        <li><app-amc-card></app-amc-card></li>
+                        <ng-container *ngFor="let amc of demoamclist;">
+                            <li *ngIf="!amc.published">
+                                <app-amc-card 
+                                [amc]="amc"
+                                (publishEventEmitter)="displayUpdated($event)"
+                                 >
+                                </app-amc-card>
+                            </li>
+                        </ng-container>
                     </ul>
                 </div>
             </div>

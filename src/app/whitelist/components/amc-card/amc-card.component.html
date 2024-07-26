@@ -1,4 +1,4 @@
-<div class="whtlst-amc-card _published">
+<div class="whtlst-amc-card _published" [ngClass]="{'published': amc?.published}">
     <div class="drag-col">
         <img class="drag-icon" src="assets/images/whitelist-drag-icon.svg" />
     </div>
@@ -9,16 +9,20 @@
                 <img class="marked" src="assets/images/whitelist-star-yellow-icon.svg" />
             </div>
             <img class="whtlst-amc-icon" src="assets/images/whitelist-pdf-icon.svg" />
-            <a href="javascript:void(0);" class="whtlst-amc-card-title main-title">Commissioning List Mar,2024</a>
-            <h4 class="whtlst-amc-card-title sub-title"><b>(Aditya Birla Sun Life Mutual Fund) </b></h4>
+            <a href="javascript:void(0);" class="whtlst-amc-card-title main-title">{{amc?.filename}}</a>
+            <h4 class="whtlst-amc-card-title sub-title"><b>({{amc?.title}}) </b></h4>
         </div>
-        <h4 class="whtlst-amc-card-title sm date">Created On 21st Feb. 2024</h4>
+        <h4 class="whtlst-amc-card-title sm date">Created On {{amc?.date}}</h4>
     </div>
     <div class="action-col">
         <button class="whtlst-published-btn">PUBLISHED</button>
         <button class="whtlst-dot-btn"><img src="assets/images/whitelist-3dots-icon.svg" /></button>
     </div>
-    <button class="whtlst-actn-btn">
+    <button class="whtlst-actn-btn" *ngIf="amc?.published" (click)="unpublishAction(amc?.id)">
+        <img class="plus" src="assets/images/whitelist-plus-icon.svg" />
+        <img class="minus" src="assets/images/whitelist-minus-icon.svg" />
+    </button>
+    <button class="whtlst-actn-btn" *ngIf="!amc?.published" (click)="publishAction(amc?.id)">
         <img class="plus" src="assets/images/whitelist-plus-icon.svg" />
         <img class="minus" src="assets/images/whitelist-minus-icon.svg" />
     </button>
