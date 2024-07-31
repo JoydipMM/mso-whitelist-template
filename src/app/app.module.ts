@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { LayoutComponent } from './whitelist/layout/layout.component';
 // import { WhitelistRoutingModule } from './whitelist/whitelist-routing.module';
@@ -19,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
     NgbModule,
     SharedModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     // WhitelistRoutingModule,
   ],
   providers: [],

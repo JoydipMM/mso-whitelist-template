@@ -11,6 +11,7 @@ import { CreatedFilterComponent } from './components/created-filter/created-filt
 import { ShortingFilterComponent } from './components/shorting-filter/shorting-filter.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrokerageUploadComponent } from './pages/brokerage-upload/brokerage-upload.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
     AmcCardComponent,
     CreatedFilterComponent,
     ShortingFilterComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    BrokerageUploadComponent
   ],
   imports: [
     CommonModule,
