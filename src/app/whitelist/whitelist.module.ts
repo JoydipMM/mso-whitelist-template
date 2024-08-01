@@ -12,6 +12,10 @@ import { ShortingFilterComponent } from './components/shorting-filter/shorting-f
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrokerageUploadComponent } from './pages/brokerage-upload/brokerage-upload.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,10 @@ import { BrokerageUploadComponent } from './pages/brokerage-upload/brokerage-upl
     WhitelistRoutingModule,
     FormsModule,
     NgbPaginationModule,
+    MatExpansionModule,
+    DragDropModule,
+    MatTableModule,
+    MatIconModule,
   ],
   exports: [
     LayoutComponent,
