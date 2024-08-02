@@ -97,7 +97,7 @@
     position: sticky;
     top: 0px;
     left: 0px;
-    z-index: 1;
+    z-index: 2;
   }
   .colum-insert-btn{
     width: 12px;
@@ -120,7 +120,7 @@
     z-index: 1;
   }
   .colum-insert-btn:hover:after{
-    background-color: aqua;
+    background-color: rgba(201, 209, 255, 1);
   }
   .colum-table .mat-header-row th:last-child .colum-insert-btn{
     display: none;
@@ -177,13 +177,53 @@
     border-radius: 0px 20px 20px 0px;
   }
   .row-insert-btn{
-    width: 48px;
-    height: 12px;
-    background-color: red;
+    /* width: 48px; */
+    height: 6px;
+    background-color: transparent;
     position: absolute;
-    left: -42px;
-    bottom: -6px;
+    left: -32px;
+    bottom: -5px;
     z-index: 1;
+    transition: all ease-in-out 0.4s;
+  }
+  .row-insert-btn:hover{
+    background-color: rgba(201, 209, 255, 1);
+  }
+  .row-add-btn{
+    width: 33px;
+    height: 33px;
+    border-radius: 50px;
+    background-color: #fff;
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all ease-in-out 0.4s;
+    opacity: 0;
+    z-index: -1;
+  }
+  .row-add-btn>img{
+    width: 14px;
+    transition: all ease-in-out 0.4s;
+  }
+  /* .row-add-btn:hover{
+    background-color: rgba(217, 244, 255, 1);
+  } */
+  .row-insert-btn:hover .row-add-btn{
+    opacity: 1;
+    z-index: 1;
+  }
+  /* .row-add-btn:hover>img{
+    filter: invert(1) brightness(100);
+  } */
+  .row-add-btn:focus{
+    outline: none;
   }
   .textfld{
     width: 100%;

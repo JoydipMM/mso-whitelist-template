@@ -89,11 +89,6 @@ export class BrokerageUploadComponent implements OnInit {
   }
 
   addColumnDynamic(index:any){
-    // const randomColumn = Math.floor(Math.random() * this.displayedColumns.length);
-    // this.displayedColumns.push(this.displayedColumns[randomColumn]);
-    //const randomColumn = 1;
-    //const index = 2;
-    //this.displayedColumns.push(this.displayedColumns[randomColumn]);
     console.log(this.displayedColumns);
     let ar = this.displayedColumns;
 
@@ -110,22 +105,23 @@ export class BrokerageUploadComponent implements OnInit {
     this.table.renderRows();
   }
 
+  addDataDynamic(index:any) {
+    // const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
+    // this.dataSource.push(ELEMENT_DATA[randomElementIndex]);
+    // this.table.renderRows();
+    let ar = this.dataSource;
+    //console.log("Before:\n" + ar);
+    ar.splice(index, 0, this.dataSource[index]);
+    //console.log("After:\n" + ar);
+    this.table.renderRows();
+  }
+
   removeData() {
     this.dataSource.pop();
     this.table.renderRows();
   }
 
 
-
-  enter() {
-    console.log("enter");
-    this.dragActive = true;
-}
-
-leave() {
-    console.log("leave");
-    this.dragActive = false;
-}
 
 
 }
