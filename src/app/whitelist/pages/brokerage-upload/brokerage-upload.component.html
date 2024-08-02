@@ -22,84 +22,174 @@
     Remove Row
   </button> -->
 
-<div style="width:100%; position: relative;">
-    <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" cdkDropList (cdkDropListDropped)="drop($event)"
-  cdkDropListData="dataSource">
+<div class="reorder-table-wrap" #reorderTable>
 
-  
-  <!-- Position Column -->
-  <ng-container matColumnDef="position">
-    <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor" cdkDragHandle>reorder</mat-icon> No. </mat-header-cell>
-    <mat-cell *matCellDef="let element">
-      <mat-icon class="example-drag-cursor" (mouseenter)="enter()" (mouseleave)="leave()">reorder</mat-icon>
-      <span>{{element.position}}</span>
-    </mat-cell>
-  </ng-container>
+  <!-- column drag table start -->
+  <table class="colum-table" style="width:100%" mat-table
+  [dataSource]="dataSource" 
+  cdkDropList
+  cdkDropListOrientation="horizontal"
+  (cdkDropListDropped)="drop2($event)">
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Name </mat-header-cell>
-    <mat-cell *matCellDef="let element"><input type="text" class="textfld" value="{{element.name}}" /> </mat-cell>
-  </ng-container>
-
-  <!-- Weight Column -->
-  <ng-container matColumnDef="weight">
-    <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Weight </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container matColumnDef="symbol">
-    <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Symbol </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-  </ng-container>
-
-  <!-- Quantity Column -->
-  <ng-container matColumnDef="quantity">
-    <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Quantity of Element </mat-header-cell>
-    <mat-cell *matCellDef="let element">{{element.quantity}}</mat-cell>
-  </ng-container>
-
-  
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></mat-row><!-- cdkDrag [cdkDragData]="row"-->
-</mat-table>
-
-
-<table class="colum-table" style="width:100%" mat-table
-       [dataSource]="dataSource" 
-       cdkDropList
-       cdkDropListOrientation="horizontal"
-       (cdkDropListDropped)="drop2($event)">
-
-  <ng-container matColumnDef="position">
-    <th mat-header-cell cdkDrag *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> No. </th>
+    <ng-container matColumnDef="position">
+    <th mat-header-cell cdkDrag *matHeaderCellDef>
+      <div class="mat-cell-wrap">
+        <mat-icon class="example-drag-cursor">reorder</mat-icon> No. {{getColumnIndex('position')}}
+        <!-- <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+          <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('position'))">
+            <div class="colum-insrtype-innr">
+              <button class="colum-insrtype-btn number-btn">
+                <img src="assets/images/whitelist-123-icon.svg" />
+              </button>
+              <button class="colum-insrtype-btn string-btn">
+                <img src="assets/images/whitelist-string-icon.svg" />
+              </button>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-  </ng-container>
+    </ng-container>
 
-  <ng-container matColumnDef="name">
-    <th mat-header-cell cdkDrag *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Name </th>
+    <ng-container matColumnDef="name">
+    <th mat-header-cell cdkDrag *matHeaderCellDef>
+    <div class="mat-cell-wrap">
+      <mat-icon class="example-drag-cursor">reorder</mat-icon> Name {{getColumnIndex('name')}}
+      <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+        <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('name'))">
+          <div class="colum-insrtype-innr">
+            <button class="colum-insrtype-btn number-btn">
+              <img src="assets/images/whitelist-123-icon.svg" />
+            </button>
+            <button class="colum-insrtype-btn string-btn">
+              <img src="assets/images/whitelist-string-icon.svg" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> 
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
+    </ng-container>
 
-  <ng-container matColumnDef="weight">
-    <th mat-header-cell cdkDrag *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Weight </th>
+    <ng-container matColumnDef="weight">
+    <th mat-header-cell cdkDrag *matHeaderCellDef>
+    <div class="mat-cell-wrap">
+      <mat-icon class="example-drag-cursor">reorder</mat-icon> Weight {{getColumnIndex('weight')}}
+      <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+        <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('weight'))">
+          <div class="colum-insrtype-innr">
+            <button class="colum-insrtype-btn number-btn">
+              <img src="assets/images/whitelist-123-icon.svg" />
+            </button>
+            <button class="colum-insrtype-btn string-btn">
+              <img src="assets/images/whitelist-string-icon.svg" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> 
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-  </ng-container>
+    </ng-container>
 
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell cdkDrag *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Symbol </th>
+    <ng-container matColumnDef="symbol">
+    <th mat-header-cell cdkDrag *matHeaderCellDef>
+    <div class="mat-cell-wrap">
+      <mat-icon class="example-drag-cursor">reorder</mat-icon> Symbol {{getColumnIndex('symbol')}}
+      <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+        <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('symbol'))">
+          <div class="colum-insrtype-innr">
+            <button class="colum-insrtype-btn number-btn">
+              <img src="assets/images/whitelist-123-icon.svg" />
+            </button>
+            <button class="colum-insrtype-btn string-btn">
+              <img src="assets/images/whitelist-string-icon.svg" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> 
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-  </ng-container>
+    </ng-container>
 
-  <ng-container matColumnDef="quantity">
-    <th mat-header-cell cdkDrag *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> quantity </th>
+    <ng-container matColumnDef="quantity">
+    <th mat-header-cell cdkDrag *matHeaderCellDef>
+    <div class="mat-cell-wrap">
+      <mat-icon class="example-drag-cursor">reorder</mat-icon> quantity {{getColumnIndex('quantity')}}
+      <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+        <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('quantity'))">
+          <div class="colum-insrtype-innr">
+            <button class="colum-insrtype-btn number-btn">
+              <img src="assets/images/whitelist-123-icon.svg" />
+            </button>
+            <button class="colum-insrtype-btn string-btn">
+              <img src="assets/images/whitelist-string-icon.svg" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
-  </ng-container>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row;let i = index; columns: displayedColumns;"></tr>
+  </table>
+  <!-- column drag table ended -->
+
+
+  <!-- row drag table start -->
+  <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8 row-table" cdkDropList (cdkDropListDropped)="drop($event)" cdkDropListData="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor" cdkDragHandle>reorder</mat-icon> No. </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-icon class="example-drag-cursor" (mouseenter)="enter()" (mouseleave)="leave()">reorder</mat-icon>
+        <input type="text" class="textfld" value="{{element.position}}" />
+        <div class="row-insert-btn"></div>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <input type="text" class="textfld" value="{{element.name}}" /> 
+      </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Weight </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <input type="text" class="textfld" value="{{element.weight}}" />
+      </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Symbol </mat-header-cell>
+      <mat-cell *matCellDef="let element"><input type="text" class="textfld" value="{{element.symbol}}" /></mat-cell>
+    </ng-container>
+
+    <!-- Quantity Column -->
+    <ng-container matColumnDef="quantity">
+      <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Quantity of Element </mat-header-cell>
+      <mat-cell *matCellDef="let element"><input type="text" class="textfld" value="{{element.quantity}}" /></mat-cell>
+    </ng-container>
+
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></mat-row><!-- cdkDrag [cdkDragData]="row"-->
+    </mat-table>
+    <!-- row drag table ended -->
+
+    
 </div>
 
 

@@ -34,19 +34,167 @@
     border: dotted #ccc 2px;
   }
 
-  mat-cell{
+  /* mat-cell{
     background-color: #fff;
-  }
+  } */
+
+.mat-cell-wrap{
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 5px;
+  height: 100%;
+  background:rgba(36, 48, 101, 1);
+  color: #fff;
+  justify-content: center;
+  font-size: 13px;
+  padding: 10px;
+}
+
+::ng-deep .mat-table{
+  box-shadow: none;
+}
+::ng-deep .mat-row{
+  border: none;
+  padding: 2px 0px;
+  position: relative;
+}
+::ng-deep .mat-cell{
+  overflow: visible;
+  padding: 0px 6px !important;
+  width: 200px;
+  position: relative;
+}
+::ng-deep .mat-cell .colum-insert-btn{
+  right: -6px !important;
+  top: -3px !important;
+  height: 60px !important;
+}
+::ng-deep .mat-header-cell{
+  width: 200px;
+}
+.mat-header-cell {
+  height: 56px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0px 6px !important;
+  margin: 0px;
+  border-bottom: transparent solid 1px !important;
+}
+::ng-deep .mat-cell .material-icons{
+  position: absolute;
+  left: -40px;
+}
+
+.reorder-table-wrap{
+  width: 100%;
+  position: relative;
+  margin-top: 60px;
+}
+
 
   .colum-table{
-    position: absolute;
+    position: sticky;
     top: 0px;
     left: 0px;
     z-index: 1;
   }
+  .colum-insert-btn{
+    width: 12px;
+    height: 56px;
+    /* background-color: red; */
+    position: absolute;
+    right: -12px;
+    top: -15px;
+    cursor: pointer;
+  }
+  .colum-insert-btn:after{
+    content:'';
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    width: 8px;
+    height: 100%;
+    background-color: transparent;
+    transition: all ease-in-out 0.4s;
+    z-index: 1;
+  }
+  .colum-insert-btn:hover:after{
+    background-color: aqua;
+  }
+  .colum-table .mat-header-row th:last-child .colum-insert-btn{
+    display: none;
+  }
+  .colum-insrtype-box{
+    width: auto;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    opacity: 0;
+    transition: all ease-in-out 0.4s;
+  }
+  .colum-insrtype-innr{
+    background-color: #fff;
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .colum-insrtype-btn{
+    width: 30px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    border: none;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
+    transition: all ease-in-out 0.4s;
+  }
+  .colum-insrtype-btn:hover,
+  .colum-insrtype-btn.active{
+    background-color:rgba(36, 48, 101, 1);
+  }
+  .colum-insrtype-btn:hover img,
+  .colum-insrtype-btn.active img{
+    filter: invert(1) brightness(100);
+    transition: all ease-in-out 0.4s;
+  }
+  .colum-insert-btn:hover .colum-insrtype-box{
+    z-index: 2;
+    opacity: 1;
+  }
+  .colum-insrtype-btn.number-btn{
+    border-radius: 20px 0px 0px 20px;
+  }
+  .colum-insrtype-btn.string-btn{
+    border-radius: 0px 20px 20px 0px;
+  }
+  .row-insert-btn{
+    width: 48px;
+    height: 12px;
+    background-color: red;
+    position: absolute;
+    left: -42px;
+    bottom: -6px;
+    z-index: 1;
+  }
   .textfld{
+    width: 100%;
+    height: 56px;
     padding: 10px;
-    border: #a2a2a2 solid 1px;
+    border: 1px solid rgba(182, 233, 255, 1);
+    box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.03);
+    text-align: center;
+  }
+  .textfld:focus{
+    outline: none;
   }
   ::ng-deep .colum-table tbody{
     display: none;
@@ -54,4 +202,14 @@
 
   ::ng-deep .eee{
     pointer-events: none;
+  }
+
+  .row-table{
+    margin-top: -56px;
+  }
+
+  ::ng-deep footer{
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
   }

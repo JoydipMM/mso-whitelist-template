@@ -84,6 +84,24 @@ export class BrokerageUploadComponent implements OnInit {
     }
   }
 
+  getColumnIndex(name: string): number {
+    return this.displayedColumns.indexOf(name);
+  }
+
+  addColumnDynamic(index:any){
+    // const randomColumn = Math.floor(Math.random() * this.displayedColumns.length);
+    // this.displayedColumns.push(this.displayedColumns[randomColumn]);
+    //const randomColumn = 1;
+    //const index = 2;
+    //this.displayedColumns.push(this.displayedColumns[randomColumn]);
+    console.log(this.displayedColumns);
+    let ar = this.displayedColumns;
+
+    console.log("Before:\n" + ar);
+    ar.splice(index, 0, this.displayedColumns[index]);
+    console.log("After:\n" + ar);
+  }
+
 
 
   addData() {
