@@ -1,255 +1,69 @@
-.example-box {
-    width: 200px;
-    height: 200px;
-    border: solid 1px #ccc;
-    color: rgba(0, 0, 0, 0.87);
-    cursor: move;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: #fff;
-    border-radius: 4px;
-    margin-right: 25px;
-    position: relative;
-    z-index: 1;
-    box-sizing: border-box;
-    padding: 10px;
-    transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-                0 2px 2px 0 rgba(0, 0, 0, 0.14),
-                0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  }
+
+.reorder-table-wrap{ width: calc(100% + 0px ); position: relative; padding: 60px 30px 0px 45px; overflow: hidden; overflow-x: auto; }
+
+.mat-header-cell { height: 56px; font-size: 12px; font-weight: 500; padding: 0px 6px !important; margin: 0px; border-bottom: transparent solid 1px !important; }
+.mat-cell-wrap{ display: flex; align-items: center; position: relative; gap: 5px; height: 100%; background:rgba(36, 48, 101, 1); color: #fff; justify-content: flex-start; font-size: 13px; padding: 10px 20px; }
+
+::ng-deep .mat-table{ box-shadow: none; font-family: 'Mulish'; }
+::ng-deep .mat-row{ border: none; padding: 2px 0px; position: relative; }
+::ng-deep .mat-cell{ overflow: visible; padding: 0px 6px !important; min-width: 200px; position: relative; }
+::ng-deep .mat-cell .colum-insert-btn{ right: -6px !important; top: -3px !important; height: 60px !important; }
+::ng-deep .mat-header-cell{ min-width: 200px; position: relative; }
+::ng-deep .mat-cell .material-icons{ position: absolute; left: -20px; }
+::ng-deep .mat-cell .material-icons.custom{ width: 15px; height: 15px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+::ng-deep .mat-cell .material-icons.custom>img{ width: 7px; }
+
+
+.colum-table{ position: sticky; top: 0px; left: 0px; z-index: 2; font-family: 'Mulish'; }
+.colum-table .mat-header-row th:last-child .colum-insert-btn{ display: none; }
+::ng-deep .colum-table tbody{ display: none; }
+::ng-deep .colum-table tr th:nth-child(1) .mat-cell-wrap{ border-top-left-radius: 10px; }
+::ng-deep .colum-table tr th .mat-cell-wrap{ justify-content: flex-start; }
+::ng-deep .colum-table .mat-column-drag-btn{ width: 15px; height: 15px;display: inline-flex; text-align: center; justify-content: center; padding: 0px; position: absolute; top: 3px; left: 50%; transform: translateX(-50%); cursor: pointer; }
+::ng-deep .colum-table .mat-column-drag-btn>img{ width: 8px; transform: rotate(90deg); filter: invert(1) brightness(100); }
+.colum-table .mat-header-cell:hover .colum-modify-btn-group{ top: -30px; opacity: 1; padding-bottom: 50px; }
+
+.colum-insert-btn{ width: 12px; height: 56px; position: absolute; right: -12px; top: -15px; cursor: pointer; }
+.colum-insert-btn:after{ content:''; position: absolute; top: 0px; left: 2px; width: 8px; height: 100%; background-color: transparent; transition: all ease-in-out 0.4s; z-index: 1; }
+.colum-insert-btn:hover:after{ background-color: rgba(201, 209, 255, 1); }
+
+.colum-insrtype-box{ width: auto; position: absolute; top: -30px; left: 50%; transform: translateX(-50%); z-index: -1; opacity: 0; transition: all ease-in-out 0.4s; }
+.colum-insrtype-innr{ background-color: #fff; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15); border-radius: 20px; padding: 4px; display: inline-flex; align-items: center; gap: 6px; }
+.colum-insrtype-btn{ width: 30px; height: 25px; display: inline-flex; align-items: center; justify-content: center; padding: 0px; border: none; background-color: #fff; position: relative; box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15); transition: all ease-in-out 0.4s; }
+.colum-insrtype-btn:hover,
+.colum-insrtype-btn.active{ background-color:rgba(36, 48, 101, 1); }
+.colum-insrtype-btn:hover img,
+.colum-insrtype-btn.active img{ filter: invert(1) brightness(100); transition: all ease-in-out 0.4s; }
+.colum-insert-btn:hover .colum-insrtype-box{ z-index: 2; opacity: 1; }
+.colum-insrtype-btn.number-btn{ border-radius: 20px 0px 0px 20px; }
+.colum-insrtype-btn.string-btn{ border-radius: 0px 20px 20px 0px; }
+
+.colum-modify-btn-group{ display: inline-flex; align-items: center; gap: 10px; position: absolute; top: 0px; left: 50%; transform: translateX(-50%); color: #000; z-index: 1; transition: all ease-in-out 0.4s; opacity: 0; }
+.colum-modify-btn{ width: 20px; height: 20px; padding: 0px; border: none; display: inline-flex;align-items: center; justify-content: center; cursor: pointer; background: transparent; }
+.colum-modify-btn>img{ max-width: 20px; max-height: 20px; opacity: 1; transition: all ease-in-out 0.3s; }
+.colum-modify-btn:hover>img{ opacity: 1; }
+
+.row-table{ margin-top: -56px; }
+.row-insert-btn{ height: 6px; background-color: transparent; position: absolute; left: -32px; bottom: -5px; z-index: 1; transition: all ease-in-out 0.4s; }
+.row-insert-btn:hover{ background-color: rgba(201, 209, 255, 1); }
+.row-add-btn{ width: 33px; height: 33px; border-radius: 50px; background-color: #fff; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15); border: none; display: inline-flex; align-items: center; justify-content: center; padding: 0px; position: absolute; left: 0px; top: 50%; transform: translateY(-50%); transition: all ease-in-out 0.4s; opacity: 0; z-index: -1; }
+.row-add-btn>img{ width: 14px; transition: all ease-in-out 0.4s; }
+.row-insert-btn:hover .row-add-btn{ opacity: 1; z-index: 1; }
+.row-add-btn:focus{ outline: none; }
+.row-table .mat-row .mat-cell-wrap{ text-align: left; justify-content: flex-start; padding:10px 20px; }
+.colum-table ::ng-deep .mat-header-row{ border-bottom-color: transparent !important; }
   
-  .example-box:active {
-    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-                0 8px 10px 1px rgba(0, 0, 0, 0.14),
-                0 3px 14px 2px rgba(0, 0, 0, 0.12);
-  }
-  
-  .example-boundary {
-    width: 400px;
-    height: 400px;
-    max-width: 100%;
-    border: dotted #ccc 2px;
-  }
+.textfld{ width: 100%; height: 56px; padding: 10px; font-size: 13px; border: 1px solid rgba(182, 233, 255, 1); box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.03); text-align: center; }
+.textfld:focus{ outline: none; }
 
-  /* mat-cell{
-    background-color: #fff;
-  } */
+::ng-deep .eee{ pointer-events: none; }
+::ng-deep footer{ background-color: #fff; position: relative; z-index: 2; }
 
-.mat-cell-wrap{
-  display: flex;
-  align-items: center;
-  position: relative;
-  gap: 5px;
-  height: 100%;
-  background:rgba(36, 48, 101, 1);
-  color: #fff;
-  justify-content: center;
-  font-size: 13px;
-  padding: 10px;
-}
+.skythBg{ background: rgba(42, 170, 225, 1) !important; }
+.greenthBg{ background: rgba(0, 152, 24, 1) !important; }
 
-::ng-deep .mat-table{
-  box-shadow: none;
-}
-::ng-deep .mat-row{
-  border: none;
-  padding: 2px 0px;
-  position: relative;
-}
-::ng-deep .mat-cell{
-  overflow: visible;
-  padding: 0px 6px !important;
-  width: 200px;
-  position: relative;
-}
-::ng-deep .mat-cell .colum-insert-btn{
-  right: -6px !important;
-  top: -3px !important;
-  height: 60px !important;
-}
-::ng-deep .mat-header-cell{
-  width: 200px;
-}
-.mat-header-cell {
-  height: 56px;
-  font-size: 12px;
-  font-weight: 500;
-  padding: 0px 6px !important;
-  margin: 0px;
-  border-bottom: transparent solid 1px !important;
-}
-::ng-deep .mat-cell .material-icons{
-  position: absolute;
-  left: -40px;
-}
-
-.reorder-table-wrap{
-  width: 100%;
-  position: relative;
-  margin-top: 60px;
-}
-
-
-  .colum-table{
-    position: sticky;
-    top: 0px;
-    left: 0px;
-    z-index: 2;
-  }
-  .colum-insert-btn{
-    width: 12px;
-    height: 56px;
-    /* background-color: red; */
-    position: absolute;
-    right: -12px;
-    top: -15px;
-    cursor: pointer;
-  }
-  .colum-insert-btn:after{
-    content:'';
-    position: absolute;
-    top: 0px;
-    left: 2px;
-    width: 8px;
-    height: 100%;
-    background-color: transparent;
-    transition: all ease-in-out 0.4s;
-    z-index: 1;
-  }
-  .colum-insert-btn:hover:after{
-    background-color: rgba(201, 209, 255, 1);
-  }
-  .colum-table .mat-header-row th:last-child .colum-insert-btn{
-    display: none;
-  }
-  .colum-insrtype-box{
-    width: auto;
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-    opacity: 0;
-    transition: all ease-in-out 0.4s;
-  }
-  .colum-insrtype-innr{
-    background-color: #fff;
-    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    padding: 4px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .colum-insrtype-btn{
-    width: 30px;
-    height: 25px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
-    border: none;
-    background-color: #fff;
-    position: relative;
-    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
-    transition: all ease-in-out 0.4s;
-  }
-  .colum-insrtype-btn:hover,
-  .colum-insrtype-btn.active{
-    background-color:rgba(36, 48, 101, 1);
-  }
-  .colum-insrtype-btn:hover img,
-  .colum-insrtype-btn.active img{
-    filter: invert(1) brightness(100);
-    transition: all ease-in-out 0.4s;
-  }
-  .colum-insert-btn:hover .colum-insrtype-box{
-    z-index: 2;
-    opacity: 1;
-  }
-  .colum-insrtype-btn.number-btn{
-    border-radius: 20px 0px 0px 20px;
-  }
-  .colum-insrtype-btn.string-btn{
-    border-radius: 0px 20px 20px 0px;
-  }
-  .row-insert-btn{
-    /* width: 48px; */
-    height: 6px;
-    background-color: transparent;
-    position: absolute;
-    left: -32px;
-    bottom: -5px;
-    z-index: 1;
-    transition: all ease-in-out 0.4s;
-  }
-  .row-insert-btn:hover{
-    background-color: rgba(201, 209, 255, 1);
-  }
-  .row-add-btn{
-    width: 33px;
-    height: 33px;
-    border-radius: 50px;
-    background-color: #fff;
-    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15);
-    border: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
-    position: absolute;
-    left: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all ease-in-out 0.4s;
-    opacity: 0;
-    z-index: -1;
-  }
-  .row-add-btn>img{
-    width: 14px;
-    transition: all ease-in-out 0.4s;
-  }
-  /* .row-add-btn:hover{
-    background-color: rgba(217, 244, 255, 1);
-  } */
-  .row-insert-btn:hover .row-add-btn{
-    opacity: 1;
-    z-index: 1;
-  }
-  /* .row-add-btn:hover>img{
-    filter: invert(1) brightness(100);
-  } */
-  .row-add-btn:focus{
-    outline: none;
-  }
-  .textfld{
-    width: 100%;
-    height: 56px;
-    padding: 10px;
-    border: 1px solid rgba(182, 233, 255, 1);
-    box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.03);
-    text-align: center;
-  }
-  .textfld:focus{
-    outline: none;
-  }
-  ::ng-deep .colum-table tbody{
-    display: none;
-  }
-
-  ::ng-deep .eee{
-    pointer-events: none;
-  }
-
-  .row-table{
-    margin-top: -56px;
-  }
-
-  ::ng-deep footer{
-    background-color: #fff;
-    position: relative;
-    z-index: 1;
-  }
+.asset-type-col{  width: 130px; min-width: 130px; max-width: 130px; }
+.asset-type-col .mat-cell-wrap{ justify-content: center; }
+.fund-category-col{ width: 155px; min-width: 155px; max-width: 155px; }
+.fund-category-col .mat-cell-wrap{ justify-content: center; }
+.fund-house-col{  }
