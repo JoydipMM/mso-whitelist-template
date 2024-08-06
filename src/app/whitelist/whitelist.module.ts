@@ -16,6 +16,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {MatIconModule} from '@angular/material/icon';
     DragDropModule,
     MatTableModule,
     MatIconModule,
+    MatCardModule,
   ],
   exports: [
     LayoutComponent,

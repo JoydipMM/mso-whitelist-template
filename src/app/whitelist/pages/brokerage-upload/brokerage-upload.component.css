@@ -1,5 +1,4 @@
-
-.reorder-table-wrap{ width: calc(100% + 0px ); position: relative; padding: 60px 30px 0px 45px; overflow: hidden; overflow-x: auto; }
+.reorder-table-wrap{ width: calc(100% + 0px ); position: relative; padding: 48px 30px 0px 45px; overflow: hidden; overflow-x: auto; }
 
 .mat-header-cell { height: 56px; font-size: 12px; font-weight: 500; padding: 0px 6px !important; margin: 0px; border-bottom: transparent solid 1px !important; }
 .mat-cell-wrap{ display: flex; align-items: center; position: relative; gap: 5px; height: 100%; background:rgba(36, 48, 101, 1); color: #fff; justify-content: flex-start; font-size: 13px; padding: 10px 20px; }
@@ -56,7 +55,7 @@
 .textfld{ width: 100%; height: 56px; padding: 10px; font-size: 13px; border: 1px solid rgba(182, 233, 255, 1); box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.03); text-align: center; }
 .textfld:focus{ outline: none; }
 
-::ng-deep .eee{ pointer-events: none; }
+::ng-deep .nodrag{ pointer-events: none; }
 ::ng-deep footer{ background-color: #fff; position: relative; z-index: 2; }
 
 .skythBg{ background: rgba(42, 170, 225, 1) !important; }

@@ -1,3 +1,22 @@
+.broker-table-row{ margin-left: -40px; margin-right: -40px; position: relative; margin-bottom: 40px;  }
+
+.broker-hd-title-area{ width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-between; position:relative; }
+.broker-hd-filter-group{ width: auto; display: inline-flex; align-items: center; gap: 10px; }
+.filter-icn-btn{ min-width: 50px; height: 37px; position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid rgba(69, 143, 246, 1); border-radius: 9px; background: transparent; padding: 0px 10px; transition: all ease-in-out 0.2s; }
+.filter-icn-btn>img{ max-width: 18px; }
+.filter-icn-btn:focus{ outline: none; }
+.filter-icn-btn:hover{ background-color: rgba(224, 237, 255, 1); }
+.filter-icn-btn.active{ background-color: rgba(69, 143, 246, 1); }
+.filter-icn-btn.active>img{ filter: brightness(100); }
+.filter-icn-btn.expand{ background-color: rgba(69, 143, 246, 1); }
+.filter-icn-btn.expand>img{ filter: brightness(100); }
+.filter-normal-dropdown{ width: 200px; min-height: 300px; display: none; position: absolute; top: 100%; right: 0; background-color: rgba(255, 255, 255, 1); box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.12); padding: 15px; z-index: 91;border-radius: 10px; font-family: 'Mulish', sans-serif; margin-top: 10px; }
+.filter-normal-dropdown>ul{ width: 100%; display: inline-flex; flex-direction: column; align-items: flex-start; list-style-type: none; gap: 10px; margin: 0px; padding: 0px; }
+.filter-normal-dropdown>ul>li{ width: 100%; position: relative; }
+.filter-normal-dropdown>ul>li>a{ width: 100%; height: 46px; display: inline-flex; align-items: center; justify-content: center; color: rgba(69, 143, 246, 1); font-size: 12px; font-weight: 700; border: rgba(69, 143, 246, 1) solid 1px; border-radius: 10px; transition: all ease-in-out 0.1s; }
+.filter-normal-dropdown>ul>li>a:hover{ background-color: rgba(69, 143, 246, 1); color: #fff; }
+.filter-icn-btn.expand .filter-normal-dropdown{ display: block; }
+
 .round-box{ width: 100%; display: inline-block; padding: 18px 28px; border-radius: 12px; box-shadow: 5.16px 12.89px 28.35px 3.87px rgba(0, 0, 0, 0.25); background-color: #fff; margin-bottom: 60px; }
 
 /* common button css start */
@@ -166,7 +185,7 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 
 
 /* search box css start */
-.whtlst-srch-box{ width: 37px; height: 37px; display: inline-flex; justify-content: flex-end; position: relative; overflow: hidden; border-radius: 6px; box-shadow: 0px 0px 15px 0px #00000017; transition: all ease-in-out 0.7s;}
+.whtlst-srch-box{ width: 37px; height: 37px; display: inline-flex; justify-content: flex-end; position: relative; overflow: hidden; border-radius: 6px; box-shadow: 0px 0px 15px 0px #00000017; transition: all ease-in-out 0.7s;  font-family: 'Mulish', sans-serif; }
 .whtlst-srch-box .multiselect-dropdown{ opacity: 0; transition: all ease-in-out 1s; transition-delay: 0.5s; position: relative; right: -200px; }
 .whtlst-srch-box.expanded{ width: 280px; overflow: visible; }
 .whtlst-srch-box.expanded .multiselect-dropdown{ opacity: 1; right: 0px; }
@@ -178,3 +197,38 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 .whtlst-srch-box .multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ display: none !important; }
 .whtlst-srch-box .multiselect-dropdown .dropdown-list{ min-width: 360px !important; }
 /* search box css ended */
+
+/* brokerage page header title css start */
+.whtlst-hdr-sctn{ width: auto; position: relative; display: inline-flex; gap: 25px;  font-family: 'Mulish', sans-serif; }
+.whtlst-bck-btn{ min-width: 51px; height: 33px; border-radius: 10px; background-color: rgba(36, 48, 101, 1); display: inline-flex; align-items: center; justify-content: center; padding: 0px; }
+.whtlst-bck-btn>img{ width: 10px; transform: rotate(90deg); filter: invert(1) brightness(100); }
+.whtlst-bck-btn:focus{ outline: none; }
+.whtlst-hdr-title-wrap{ width: auto; display: inline-flex; flex-direction: column; align-items: flex-start; }
+.whtlst-hdr-title{ font-size: 24px; font-weight: 700; color: #000; line-height: 1.4; padding: 0px; margin: 0px; }
+.whtlst-hdr-sub-title{ color: rgba(255, 92, 92, 1); size: 12px; font-weight: 700; line-height: 1.2;  }
+/* brokerage page header title css ended */
+
+.whtlst-brkage-section{ width: 100%; position: relative; padding: 0px 0px 0px 12px; margin-bottom: 40px; }
+
+/* brokerage slider css start */
+.whtlst-brkage-sldr-sctn{ width:100%; min-height:356px; display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(180deg, #67C3F3 0%, #5A98F2 100%);  font-family: 'Mulish', sans-serif; margin-bottom: 40px;  }
+.whtlst-brkage-sldr{ width: 100%; max-width: 1100px; display: inline-flex; justify-content: space-between; position: relative; color: #fff; }
+.whtlst-brkage-sldr .sldr-col{ position: relative;display: inline-flex; flex-direction: column; }
+.whtlst-brkage-sldr .sldr-col.left{ width: 40%; }
+.whtlst-brkage-sldr-title{ font-size: 32px; font-weight: 700; margin-bottom: 20px; }
+.whtlst-brkage-sldr-subtitle{ font-size: 16px; font-weight: 300; line-height: 1.6; }
+.whtlst-brkage-sldr-img-wrap{ display: inline-flex; position: relative; align-items: center; gap: 5px; }
+.whtlst-brkage-sldr-imgframe{width: 157px; height: 209px; overflow: hidden; }
+.whtlst-brkage-sldr-imgframe.lg{width: 187px; height: 253px; overflow: hidden; }
+.whtlst-brkage-sldr-imgframe:nth-child(1) img{ margin: -24px; }
+.whtlst-brkage-sldr-imgframe:nth-child(2) img{ margin: -29px; }
+.whtlst-brkage-sldr-imgframe:nth-child(3) img{ margin: -24px; }
+/* brokerage slider css ended */
+
+.mat-card{ padding: 0px !important; font-family: 'Mulish', sans-serif; border: 1px solid rgba(182, 233, 255, 1); border-radius: 10px !important; box-shadow: none !important;  }
+.mat-card .mat-card-header{ min-height: 56px; display: flex; align-items: center; background-color: rgba(36, 48, 101, 1); padding:10px 30px; color: #fff; border-radius: 10px 10px 0px 0px; }
+.mat-card .mat-card-header-text{ margin: 0px; }
+.mat-card .mat-card-content{ padding:20px 30px 50px !important; }
+.mat-card .mat-card-title{ margin: 0px !important; }
+.mat-card .mat-card-title.sm{ font-size: 14px !important; }
+.mat-card .mat-card-content p{ font-size: 16px; color: rgba(46, 58, 89, 1); font-weight: 700; line-height: 1.2; }

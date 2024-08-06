@@ -1,240 +1,321 @@
 <app-header></app-header>
 <div class="container">
-    <div class="row">
-        <!-- <div class="col-auto"><app-leftmenu></app-leftmenu></div>
+  <div class="row">
+    <!-- <div class="col-auto"><app-leftmenu></app-leftmenu></div>
         <div class="col"><router-outlet></router-outlet></div> -->
-        <div class="col-12">
-            
-            Brokerage Upload
+    <div class="col-12">
 
-
-<!-- <button mat-raised-button (click)="addColumn()"> Add column </button> -->
-<!-- <button mat-raised-button (click)="removeColumn()"> Remove column </button> -->
-
-<!-- <button mat-raised-button (click)="addData()" class="demo-button" style="margin: 0px 20px;">
-Add Row
-</button> -->
-<!-- <button mat-raised-button [disabled]="!dataSource.length" (click)="removeData()" class="demo-button">
-    Remove Row
-</button> -->
-
-<!-- [ngStyle]="{'width': reorderTable.offsetWidth+'px'  }" -->
-<div class="reorder-table-wrap"  #reorderTable>
-  
-  <!-- column drag table start -->
-  <table class="colum-table" style="width:100%" mat-table
-  [dataSource]="dataSource" 
-  cdkDropList
-  cdkDropListOrientation="horizontal"
-  (cdkDropListDropped)="drop2($event)">
-
-    <ng-container matColumnDef="position">
-    <th mat-header-cell cdkDrag *matHeaderCellDef class="eee">
-      <div class="colum-modify-btn-group">
-        <button class="colum-modify-btn" (click)="removeColumnDynamic(getColumnIndex('position'))"><img src="assets/images/whitelist-red-close-icon.svg"/></button>
-        <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg"/></button>
-      </div>
-      <div class="mat-cell-wrap skythBg">
-         Scheme Name (REG)
-        <!-- {{'col index- '+ getColumnIndex('position')}} -->
-      </div>
-    </th>
-    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="name">
-    <th mat-header-cell cdkDrag *matHeaderCellDef>
-      <div class="colum-modify-btn-group">
-        <button class="colum-modify-btn"><img src="assets/images/whitelist-red-close-icon.svg"/></button>
-        <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg"/></button>
-      </div>
-      <div class="mat-cell-wrap greenthBg">
-        <div class="mat-column-drag-btn"><img src="assets/images/whitelist-drag-icon.svg" /></div>
-        Scheme Mapping
-        <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
-          <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('name'))">
-            <div class="colum-insrtype-innr">
-              <button class="colum-insrtype-btn number-btn">
-                <img src="assets/images/whitelist-123-icon.svg" />
-              </button>
-              <button class="colum-insrtype-btn string-btn">
-                <img src="assets/images/whitelist-string-icon.svg" />
-              </button>
-            </div>
+      <div class="broker-hd-title-area">
+        <div class="whtlst-hdr-sctn">
+          <button class="whtlst-bck-btn">
+            <img src="assets/images/dropdown-down-arrow.svg" />
+          </button>
+          <div class="whtlst-hdr-title-wrap">
+            <h3 class="whtlst-hdr-title">Commissioning List 24-25</h3>
+            <span class="whtlst-hdr-sub-title">All Inputs should be with GST<br>Same Scheme cannot be selected twice</span>
           </div>
+          <button class="filter-icn-btn">
+            <img src="assets/images/whitelist-edit-icon.svg" />
+          </button>
         </div>
-      </div> 
-    </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="weight">
-    <th mat-header-cell cdkDrag *matHeaderCellDef class="asset-type-col">
-      <div class="colum-modify-btn-group">
-        <button class="colum-modify-btn"><img src="assets/images/whitelist-red-close-icon.svg"/></button>
-        <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg"/></button>
-      </div>
-      <div class="mat-cell-wrap">
-        <div class="mat-column-drag-btn"><img src="assets/images/whitelist-drag-icon.svg" /></div> Asset Type
-        <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
-          <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('weight'))">
-            <div class="colum-insrtype-innr">
-              <button class="colum-insrtype-btn number-btn">
-                <img src="assets/images/whitelist-123-icon.svg" />
-              </button>
-              <button class="colum-insrtype-btn string-btn">
-                <img src="assets/images/whitelist-string-icon.svg" />
-              </button>
+        <div class="broker-hd-filter-group">
+          <button class="filter-icn-btn">
+            <img src="assets/images/whitelist-normal-star-icon.svg" />
+          </button>
+          <button class="filter-icn-btn active">
+            <img src="assets/images/whitelist-filter-icon.svg" />
+          </button>
+          <button class="filter-icn-btn">
+            <img src="assets/images/whitelist-graph-icon.svg" />
+          </button>
+          <button class="filter-icn-btn">
+            <img src="assets/images/whitelist-upload-icon.svg" />
+          </button>
+          <button class="filter-icn-btn">
+            <img src="assets/images/whitelist-edit-check-icon.svg" />
+          </button>
+          <button class="filter-icn-btn">
+            <img src="assets/images/whitelist-edit-check-icon.svg" />
+          </button>
+          <button #accro_1 class="filter-icn-btn" (click)="accro_1.classList.toggle('expand')">
+            <img src="assets/images/fluent-mdl2_set-action.svg" />
+            <img src="assets/images/whitelist-blue-down-icon.svg" class="arrow" />
+            <div class="filter-normal-dropdown">
+              <ul>
+                <li><a href="javascript:void(0);">Select to Delete Row</a></li>
+                <li><a href="javascript:void(0);">Select to Delete Column</a></li>
+                <li><a href="javascript:void(0);">Select to Hide Row</a></li>
+                <li><a href="javascript:void(0);">Select to Hide Column</a></li>
+                <li><a href="javascript:void(0);">Show Hidden Rows</a></li>
+                <li><a href="javascript:void(0);">Show Hidden Columns</a></li>
+                <li><a href="javascript:void(0);">Save List</a></li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </div> 
-    </th>
-    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="symbol">
-    <th mat-header-cell cdkDrag *matHeaderCellDef class="fund-category-col">
-      <div class="colum-modify-btn-group">
-        <button class="colum-modify-btn"><img src="assets/images/whitelist-red-close-icon.svg"/></button>
-        <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg"/></button>
-      </div>
-      <div class="mat-cell-wrap">
-        <div class="mat-column-drag-btn"><img src="assets/images/whitelist-drag-icon.svg" /></div> Fund Category
-        <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
-          <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('symbol'))">
-            <div class="colum-insrtype-innr">
-              <button class="colum-insrtype-btn number-btn">
-                <img src="assets/images/whitelist-123-icon.svg" />
-              </button>
-              <button class="colum-insrtype-btn string-btn">
-                <img src="assets/images/whitelist-string-icon.svg" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> 
-    </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="quantity">
-    <th mat-header-cell cdkDrag *matHeaderCellDef class="fund-house-col">
-      <div class="colum-modify-btn-group">
-        <button class="colum-modify-btn"><img src="assets/images/whitelist-red-close-icon.svg"/></button>
-        <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg"/></button>
-      </div>
-      <div class="mat-cell-wrap">
-        <div class="mat-column-drag-btn"><img src="assets/images/whitelist-drag-icon.svg" /></div> Fund House
-        <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
-          <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('quantity'))">
-            <div class="colum-insrtype-innr">
-              <button class="colum-insrtype-btn number-btn">
-                <img src="assets/images/whitelist-123-icon.svg" />
-              </button>
-              <button class="colum-insrtype-btn string-btn">
-                <img src="assets/images/whitelist-string-icon.svg" />
-              </button>
-            </div>
-          </div>
+          </button>
+          <app-search-box></app-search-box>
         </div>
       </div>
-    </th>
-    <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row;let i = index; columns: displayedColumns;"></tr>
-  </table>
-  <!-- column drag table ended -->
 
 
-  <!-- row drag table start -->
-  <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8 row-table" cdkDropList (cdkDropListDropped)="drop($event)" cdkDropListData="dataSource">
+      <!-- <button mat-raised-button (click)="addColumn()"> Add column </button> -->
+      <!-- <button mat-raised-button (click)="removeColumn()"> Remove column </button> -->
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef>
-        <mat-icon class="example-drag-cursor">reorder</mat-icon> No.
-      </mat-header-cell>
-      <mat-cell *matCellDef="let element; let i = index">
-        <!-- <mat-icon class="example-drag-cursor">reorder</mat-icon> -->
-        <span class="material-icons custom"><img src="assets/images/whitelist-drag-icon.svg" /></span>
-        <input type="text" class="textfld" value="{{element.position}}" />
-        <div class="row-insert-btn" [ngStyle]="{'width': (reorderTable.offsetWidth - 48)+'px'}">
-          <button class="row-add-btn" (click)="addDataDynamic(i)"><img src="assets/images/whitelist-line-plus-icon.svg" /></button>
+      <!-- <button mat-raised-button (click)="addData()" class="demo-button" style="margin: 0px 20px;">Add Row</button> -->
+      <!-- <button mat-raised-button [disabled]="!dataSource.length" (click)="removeData()" class="demo-button">Remove Row</button> -->
+
+      <div class="broker-table-row">
+        <div class="reorder-table-wrap" #reorderTable>
+
+          <!-- column drag table start -->
+          <table class="colum-table" style="width:100%" mat-table [dataSource]="dataSource" cdkDropList
+            cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop2($event)">
+
+            <ng-container matColumnDef="position">
+              <th mat-header-cell cdkDrag *matHeaderCellDef class="nodrag">
+                <div class="colum-modify-btn-group">
+                  <button class="colum-modify-btn" (click)="removeColumnDynamic(getColumnIndex('position'))"><img
+                      src="assets/images/whitelist-red-close-icon.svg" /></button>
+                  <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg" /></button>
+                </div>
+                <div class="mat-cell-wrap skythBg">
+                  Scheme Name (REG)
+                  <!-- {{'col index- '+ getColumnIndex('position')}} -->
+                  <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+                    <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('name'))">
+                      <div class="colum-insrtype-innr">
+                        <button class="colum-insrtype-btn number-btn">
+                          <img src="assets/images/whitelist-123-icon.svg" />
+                        </button>
+                        <button class="colum-insrtype-btn string-btn">
+                          <img src="assets/images/whitelist-string-icon.svg" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+              <th mat-header-cell cdkDrag *matHeaderCellDef>
+                <div class="colum-modify-btn-group">
+                  <button class="colum-modify-btn"><img src="assets/images/whitelist-red-close-icon.svg" /></button>
+                  <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg" /></button>
+                </div>
+                <div class="mat-cell-wrap greenthBg">
+                  <div class="mat-column-drag-btn"><img src="assets/images/whitelist-drag-icon.svg" /></div>
+                  Scheme Mapping
+                  <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+                    <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('name'))">
+                      <div class="colum-insrtype-innr">
+                        <button class="colum-insrtype-btn number-btn">
+                          <img src="assets/images/whitelist-123-icon.svg" />
+                        </button>
+                        <button class="colum-insrtype-btn string-btn">
+                          <img src="assets/images/whitelist-string-icon.svg" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="weight">
+              <th mat-header-cell cdkDrag *matHeaderCellDef class="asset-type-col">
+                <div class="colum-modify-btn-group">
+                  <button class="colum-modify-btn"><img src="assets/images/whitelist-red-close-icon.svg" /></button>
+                  <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg" /></button>
+                </div>
+                <div class="mat-cell-wrap">
+                  <div class="mat-column-drag-btn"><img src="assets/images/whitelist-drag-icon.svg" /></div> Asset Type
+                  <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+                    <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('weight'))">
+                      <div class="colum-insrtype-innr">
+                        <button class="colum-insrtype-btn number-btn">
+                          <img src="assets/images/whitelist-123-icon.svg" />
+                        </button>
+                        <button class="colum-insrtype-btn string-btn">
+                          <img src="assets/images/whitelist-string-icon.svg" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="symbol">
+              <th mat-header-cell cdkDrag *matHeaderCellDef class="fund-category-col">
+                <div class="colum-modify-btn-group">
+                  <button class="colum-modify-btn"><img src="assets/images/whitelist-red-close-icon.svg" /></button>
+                  <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg" /></button>
+                </div>
+                <div class="mat-cell-wrap">
+                  <div class="mat-column-drag-btn"><img src="assets/images/whitelist-drag-icon.svg" /></div> Fund Category
+                  <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+                    <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('symbol'))">
+                      <div class="colum-insrtype-innr">
+                        <button class="colum-insrtype-btn number-btn">
+                          <img src="assets/images/whitelist-123-icon.svg" />
+                        </button>
+                        <button class="colum-insrtype-btn string-btn">
+                          <img src="assets/images/whitelist-string-icon.svg" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="quantity">
+              <th mat-header-cell cdkDrag *matHeaderCellDef class="fund-house-col">
+                <div class="colum-modify-btn-group">
+                  <button class="colum-modify-btn"><img src="assets/images/whitelist-red-close-icon.svg" /></button>
+                  <button class="colum-modify-btn"><img src="assets/images/whitelist-gray-eye-icon.svg" /></button>
+                </div>
+                <div class="mat-cell-wrap">
+                  <div class="mat-column-drag-btn"><img src="assets/images/whitelist-drag-icon.svg" /></div> Fund House
+                  <div class="colum-insert-btn" [ngStyle]="{'height': reorderTable.offsetHeight+'px'  }">
+                    <div class="colum-insrtype-box" (click)="addColumnDynamic(getColumnIndex('quantity'))">
+                      <div class="colum-insrtype-innr">
+                        <button class="colum-insrtype-btn number-btn">
+                          <img src="assets/images/whitelist-123-icon.svg" />
+                        </button>
+                        <button class="colum-insrtype-btn string-btn">
+                          <img src="assets/images/whitelist-string-icon.svg" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </th>
+              <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row;let i = index; columns: displayedColumns;"></tr>
+          </table>
+          <!-- column drag table ended -->
+
+
+          <!-- row drag table start -->
+          <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8 row-table" cdkDropList
+            (cdkDropListDropped)="drop($event)" cdkDropListData="dataSource">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef>
+                <mat-icon class="example-drag-cursor">reorder</mat-icon> No.
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element; let i = index">
+                <!-- <mat-icon class="example-drag-cursor">reorder</mat-icon> -->
+                <span class="material-icons custom"><img src="assets/images/whitelist-drag-icon.svg" /></span>
+                <input type="text" class="textfld" value="{{element.position}}" />
+                <div class="row-insert-btn" [ngStyle]="{'width': (reorderTable.offsetWidth - 48)+'px'}">
+                  <button class="row-add-btn" (click)="addDataDynamic(i)"><img
+                      src="assets/images/whitelist-line-plus-icon.svg" /></button>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Name
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <!-- <input type="text" class="textfld" value="{{element.name}}" />  -->
+                <div class="whtlst-field-wrap">
+                  <ng-multiselect-dropdown class="normal single" [placeholder]="'Select AMC'"
+                    [settings]="amcdropdownSettings" [data]="amcnameList" [(ngModel)]="selectedamcnameItems"
+                    (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                  </ng-multiselect-dropdown>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+              <mat-header-cell *matHeaderCellDef class="asset-type-col"><mat-icon
+                  class="example-drag-cursor">reorder</mat-icon> Weight </mat-header-cell>
+              <mat-cell *matCellDef="let element" class="asset-type-col">
+                <input type="text" class="textfld" value="{{element.weight}}" />
+              </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+              <mat-header-cell *matHeaderCellDef class="fund-category-col"><mat-icon
+                  class="example-drag-cursor">reorder</mat-icon> Symbol </mat-header-cell>
+              <mat-cell *matCellDef="let element" class="fund-category-col"><input type="text" class="textfld"
+                  value="{{element.symbol}}" /></mat-cell>
+            </ng-container>
+
+            <!-- Quantity Column -->
+            <ng-container matColumnDef="quantity">
+              <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Quantity of
+                Element </mat-header-cell>
+              <mat-cell *matCellDef="let element"><input type="text" class="textfld"
+                  value="{{element.quantity}}" /></mat-cell>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag
+              [cdkDragData]="row"></mat-row><!-- cdkDrag [cdkDragData]="row"-->
+          </mat-table>
+          <!-- row drag table ended -->
+
+
         </div>
-      </mat-cell>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        <!-- <input type="text" class="textfld" value="{{element.name}}" />  -->
-        <div class="whtlst-field-wrap">
-          <ng-multiselect-dropdown
-              class="normal single"
-              [placeholder]="'Select AMC'"
-              [settings]="amcdropdownSettings"
-              [data]="amcnameList"
-              [(ngModel)]="selectedamcnameItems"
-              (onSelect)="onItemSelect($event)"
-              (onSelectAll)="onSelectAll($event)"
-          >
-          </ng-multiselect-dropdown>
       </div>
-      </mat-cell>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef class="asset-type-col"><mat-icon class="example-drag-cursor">reorder</mat-icon> Weight </mat-header-cell>
-      <mat-cell *matCellDef="let element" class="asset-type-col">
-        <input type="text" class="textfld" value="{{element.weight}}" />
-      </mat-cell>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef class="fund-category-col"><mat-icon class="example-drag-cursor">reorder</mat-icon> Symbol </mat-header-cell>
-      <mat-cell *matCellDef="let element" class="fund-category-col"><input type="text" class="textfld" value="{{element.symbol}}" /></mat-cell>
-    </ng-container>
-
-    <!-- Quantity Column -->
-    <ng-container matColumnDef="quantity">
-      <mat-header-cell *matHeaderCellDef><mat-icon class="example-drag-cursor">reorder</mat-icon> Quantity of Element </mat-header-cell>
-      <mat-cell *matCellDef="let element"><input type="text" class="textfld" value="{{element.quantity}}" /></mat-cell>
-    </ng-container>
-
-    
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></mat-row><!-- cdkDrag [cdkDragData]="row"-->
-    </mat-table>
-    <!-- row drag table ended -->
-
-    
-</div>
 
 
 
+      <!-- card section start -->
+      <div class="whtlst-brkage-section">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title class="sm">Disclaimer</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              This report has been prepared on the basis of data available with us and we have taken all precautions so that there are no errors and lapses. However, we do not assume any liability for actions taken on the basis of this report. The user is advised to verify the contents of the report independently.The various ratios have been calculated against respective scheme benchmark for trailing one year period. Past performance may or may not be sustained in future. Mutual fund investments are subject to market risks, read all scheme related documents carefully.
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <!-- card section ended -->
 
 
 
-
-
-              
-        
-        
-        
-        
-            <!-- https://stackblitz.com/edit/angular-rsx9ka?file=src%2Fapp%2Fapp.component.ts -->
-             <!-- https://material.angular.io/components/table/examples -->
-              <!-- https://stackblitz.com/edit/angular-ivy-z3cpj2?file=src%2Fapp%2Fapp.component.ts -->
-        
-        
-        
-        </div>
     </div>
+  </div>
 </div>
+
+<!-- brokerage slider section start -->
+<div class="whtlst-brkage-sldr-sctn">
+  <div class="whtlst-brkage-sldr">
+    <div class="sldr-col left">
+      <h3 class="whtlst-brkage-sldr-title">Marketing Banners for 
+        your Business</h3>
+      <h4 class="whtlst-brkage-sldr-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi amet blandit non porttitor velit dictum convallis id.</h4>
+    </div>
+    <div class="sldr-col right">
+      <div class="whtlst-brkage-sldr-img-wrap">
+        <div class="whtlst-brkage-sldr-imgframe"><img src="assets/images/whitelist-borkerage-slider-img-1.svg" /></div>
+        <div class="whtlst-brkage-sldr-imgframe lg"><img src="assets/images/whitelist-borkerage-slider-img-2.svg" /></div>
+        <div class="whtlst-brkage-sldr-imgframe"><img src="assets/images/whitelist-borkerage-slider-img-3.svg" /></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- brokerage slider section ended -->
+
+
 <app-footer></app-footer>
