@@ -52,7 +52,7 @@
 .row-table .mat-row .mat-cell-wrap{ text-align: left; justify-content: flex-start; padding:10px 20px; }
 .colum-table ::ng-deep .mat-header-row{ border-bottom-color: transparent !important; }
   
-.textfld{ width: 100%; height: 56px; padding: 10px; font-size: 13px; border: 1px solid rgba(182, 233, 255, 1); box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.03); text-align: center; }
+.textfld{ width: 100%; height: 56px; padding: 10px; font-size: 12px; border: 1px solid rgba(182, 233, 255, 1); box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.03); text-align: center; }
 .textfld:focus{ outline: none; }
 
 ::ng-deep .nodrag{ pointer-events: none; }
@@ -66,3 +66,23 @@
 .fund-category-col{ width: 155px; min-width: 155px; max-width: 155px; }
 .fund-category-col .mat-cell-wrap{ justify-content: center; }
 .fund-house-col{  }
+
+.whtlst-fld-box{ width: 100%; height: 56px; display: inline-flex; gap: 10px; padding: 10px; font-size: 13px; border: 1px solid rgba(182, 233, 255, 1); box-shadow: 0px 0px 30px 8px rgba(0, 0, 0, 0.03) }
+.whtlst-fld-box .fabstar{ width: 20px; }
+.whtlst-fld-box .whtlst-field-wrap{ width: 91%; }
+.whtlst-fld-box ::ng-deep .multiselect-dropdown { background-color: transparent !important; border-color: transparent !important;}
+.whtlst-fld-box ::ng-deep .multiselect-dropdown .dropdown-btn{ border: none !important; height: 35px; }
+.whtlst-fld-box ::ng-deep .multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ padding: 4px 5px !important; background-position: center center !important; }
+.whtlst-fld-box ::ng-deep .multiselect-dropdown .dropdown-btn{ font-size: 12px !important; }
+.whtlst-fld-box ::ng-deep .multiselect-dropdown .dropdown-list{ width: calc(100% + 70px) !important; right: -10px !important; }
+.whtlst-fld-box ::ng-deep .multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret { width: 32px !important; background: url(/assets/images/whitelist-blue-down-icon.svg) no-repeat 15px 18px; background-size: 16px; }
+
+.gst-switch-text{ font-size:16px; font-weight: 500; color:rgba(79, 99, 188, 1); }
+
+.slide-switch ::ng-deep .mat-slide-toggle-bar { width: 34px !important; height: 18px !important; background-color: rgba(217, 217, 217, 1) !important; }
+.slide-switch ::ng-deep .mat-slide-toggle-thumb-container{ width: 13px; height: 13px; top: 2px; left: 2px; } 
+.slide-switch ::ng-deep .mat-slide-toggle-content{ line-height: 1; }
+.slide-switch ::ng-deep .mat-slide-toggle-ripple{ display: none !important; }
+.slide-switch ::ng-deep .mat-slide-toggle-thumb { height: 14px; width: 14px; box-shadow: none; }
+.slide-switch.mat-checked ::ng-deep .mat-slide-toggle-thumb{ background-color: #fff !important; }
+.slide-switch.mat-checked ::ng-deep .mat-slide-toggle-bar{ background-color: rgba(36, 48, 101, 1) !important; }

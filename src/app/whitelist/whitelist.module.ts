@@ -17,6 +17,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {MatCardModule} from '@angular/material/card';
     MatTableModule,
     MatIconModule,
     MatCardModule,
+    MatSlideToggleModule,
   ],
   exports: [
     LayoutComponent,

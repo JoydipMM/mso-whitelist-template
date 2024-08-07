@@ -19,6 +19,12 @@
           </button>
         </div>
         <div class="broker-hd-filter-group">
+          <mat-slide-toggle
+            class="slide-switch"
+            [checked]="checked"
+            [disabled]="disabled">
+            <span class="gst-switch-text">GST</span>
+          </mat-slide-toggle>
           <button class="filter-icn-btn">
             <img src="assets/images/whitelist-normal-star-icon.svg" />
           </button>
@@ -30,9 +36,6 @@
           </button>
           <button class="filter-icn-btn">
             <img src="assets/images/whitelist-upload-icon.svg" />
-          </button>
-          <button class="filter-icn-btn">
-            <img src="assets/images/whitelist-edit-check-icon.svg" />
           </button>
           <button class="filter-icn-btn">
             <img src="assets/images/whitelist-edit-check-icon.svg" />
@@ -67,8 +70,7 @@
         <div class="reorder-table-wrap" #reorderTable>
 
           <!-- column drag table start -->
-          <table class="colum-table" style="width:100%" mat-table [dataSource]="dataSource" cdkDropList
-            cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop2($event)">
+          <table class="colum-table" style="width:100%" mat-table [dataSource]="dataSource" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop2($event)">
 
             <ng-container matColumnDef="position">
               <th mat-header-cell cdkDrag *matHeaderCellDef class="nodrag">
@@ -230,12 +232,13 @@
               </mat-header-cell>
               <mat-cell *matCellDef="let element">
                 <!-- <input type="text" class="textfld" value="{{element.name}}" />  -->
-                <div class="whtlst-field-wrap">
-                  <ng-multiselect-dropdown class="normal single" [placeholder]="'Select AMC'"
-                    [settings]="amcdropdownSettings" [data]="amcnameList" [(ngModel)]="selectedamcnameItems"
-                    (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
-                  </ng-multiselect-dropdown>
-                </div>
+                 <div class="whtlst-fld-box">
+                    <img src="assets/images/whitelist-star-line-icon.svg"class="fabstar" />
+                    <div class="whtlst-field-wrap">
+                      <ng-multiselect-dropdown class="normal single" [placeholder]="'Select Any Scheme'" [settings]="amcdropdownSettings" [data]="amcnameList" [(ngModel)]="selectedamcnameItems" (onSelect)="onItemSelect($event)" (onSelectAll)="onSelectAll($event)">
+                      </ng-multiselect-dropdown>
+                    </div>
+                 </div>
               </mat-cell>
             </ng-container>
 

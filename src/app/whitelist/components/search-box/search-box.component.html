@@ -1,5 +1,5 @@
 <div class="whtlst-srch-box" [ngClass]="{'expanded': searchExpanded }" >
-    <div class="whtlst-srch-fld">
+    <div class="whtlst-srch-fld" (click)="searchOpenAction()"  [ngClass]="{'showsearch': searchOpenExpanded }">
         <ng-multiselect-dropdown
             class="normal single"
             [placeholder]="'Global Search on Filename'"

@@ -13,6 +13,7 @@ export class SearchBoxComponent implements OnInit {
   searchdropdownSettings:any = {};
 
   searchExpanded:boolean = false;
+  searchOpenExpanded:boolean = false;
 
   constructor() { }
 
@@ -66,6 +67,12 @@ export class SearchBoxComponent implements OnInit {
     setTimeout(()=>{                           
       this.selectedsearchnameItems = [];  
     }, 1000);
+    if(this.searchOpenExpanded === true){
+      this.searchOpenExpanded = false;
+    }
+  }
+  searchOpenAction(){
+    this.searchOpenExpanded =true;
   }
 
 }

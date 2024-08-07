@@ -35,6 +35,10 @@ export class BrokerageUploadComponent implements OnInit {
 
   dragActive:boolean = false;
 
+  /* gst switch */
+  checked = false;
+  disabled = false;
+
   /* amc name */
   amcnameList:any = [];
   selectedamcnameItems:any = [];
@@ -54,8 +58,8 @@ export class BrokerageUploadComponent implements OnInit {
       { item_id: 5, item_text: 'Aditya Birla Sun Life Infrastructure Fund' }
     ];
     this.selectedamcnameItems = [
-      { item_id: 3, item_text: 'Kotak Infrastructure and Economic Reform Fund' },
-      { item_id: 4, item_text: 'HSBC Small Cap Fund' }
+      // { item_id: 3, item_text: 'Kotak Infrastructure and Economic Reform Fund' },
+      // { item_id: 4, item_text: 'HSBC Small Cap Fund' }
     ];
     this.amcdropdownSettings = {
       singleSelection: true,

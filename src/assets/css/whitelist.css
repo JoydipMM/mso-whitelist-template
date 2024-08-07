@@ -187,9 +187,11 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 /* search box css start */
 .whtlst-srch-box{ width: 37px; height: 37px; display: inline-flex; justify-content: flex-end; position: relative; overflow: hidden; border-radius: 6px; box-shadow: 0px 0px 15px 0px #00000017; transition: all ease-in-out 0.7s;  font-family: 'Mulish', sans-serif; }
 .whtlst-srch-box .multiselect-dropdown{ opacity: 0; transition: all ease-in-out 1s; transition-delay: 0.5s; position: relative; right: -200px; }
-.whtlst-srch-box.expanded{ width: 280px; overflow: visible; }
+.whtlst-srch-box.expanded{ /*width: 280px;*/ overflow: visible; }
 .whtlst-srch-box.expanded .multiselect-dropdown{ opacity: 1; right: 0px; }
-.whtlst-srch-box .whtlst-srch-fld{ width: 280px; }
+.whtlst-srch-box .whtlst-srch-fld{ width: 0px; position: absolute; overflow: hidden; border-radius: 6px; box-shadow: 0px 0px 15px 0px #00000017; background: #fff; transition: all ease-in-out 0.2s; }
+.whtlst-srch-box.expanded .whtlst-srch-fld{ width: 280px; position: absolute; overflow: hidden; }
+.whtlst-srch-box.expanded .whtlst-srch-fld.showsearch{ overflow: visible; }
 .whtlst-srch-btn{ width: 37px; height: 37px; flex-shrink: 0; display: inline-flex; position: relative; align-items: center; justify-content: center; padding: 0px; border: none; background-color: #fff; }
 .whtlst-srch-btn>img{ width: 17px; opacity: 0.9; }
 .whtlst-srch-box .multiselect-dropdown { background-color: transparent !important; flex-shrink: 0; }
@@ -218,7 +220,7 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 .whtlst-brkage-sldr-title{ font-size: 32px; font-weight: 700; margin-bottom: 20px; }
 .whtlst-brkage-sldr-subtitle{ font-size: 16px; font-weight: 300; line-height: 1.6; }
 .whtlst-brkage-sldr-img-wrap{ display: inline-flex; position: relative; align-items: center; gap: 5px; }
-.whtlst-brkage-sldr-imgframe{width: 157px; height: 209px; overflow: hidden; }
+.whtlst-brkage-sldr-imgframe{width: 157px; height: 209px; overflow: hidden; border-radius: 18px; }
 .whtlst-brkage-sldr-imgframe.lg{width: 187px; height: 253px; overflow: hidden; }
 .whtlst-brkage-sldr-imgframe:nth-child(1) img{ margin: -24px; }
 .whtlst-brkage-sldr-imgframe:nth-child(2) img{ margin: -29px; }
