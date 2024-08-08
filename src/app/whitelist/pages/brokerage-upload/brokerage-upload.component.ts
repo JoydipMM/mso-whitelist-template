@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
 import {MatTable, MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
-
+import { MatDialog } from '@angular/material/dialog';
+import { ExcelUploadDialogComponent } from '../../components/dialogs/excel-upload-dialog/excel-upload-dialog.component';
 
 export interface PeriodicElement {
   name: string;
@@ -44,7 +45,7 @@ export class BrokerageUploadComponent implements OnInit {
   selectedamcnameItems:any = [];
   amcdropdownSettings:any = {};
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
 
    }
 
@@ -71,6 +72,8 @@ export class BrokerageUploadComponent implements OnInit {
       unSelectAllText: 'UnSelect All',
       itemsShowLimit: 1,
     };
+
+    this.openUploadExcelDialog();
   }
 
 
@@ -100,14 +103,13 @@ export class BrokerageUploadComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'quantity'];
   dataSource = ELEMENT_DATA;
 
-  drop(event: CdkDragDrop<string>) {
+  rowDrop(event: CdkDragDrop<string>) {
     const previousIndex = this.dataSource.findIndex(d => d === event.item.data);
-
     moveItemInArray(this.dataSource, previousIndex, event.currentIndex);
     this.table.renderRows();
   }
 
-  drop2(event: CdkDragDrop<string>) {
+  columnDrop(event: CdkDragDrop<string>) {
     moveItemInArray(this.displayedColumns, event.previousIndex, event.currentIndex);
     //this.table.renderRows();
   }
@@ -117,29 +119,22 @@ export class BrokerageUploadComponent implements OnInit {
   }
 
 
-  addColumn() {
-    // const randomColumn = Math.floor(Math.random() * this.displayedColumns.length);
-    // this.displayedColumns.push(this.displayedColumns[randomColumn]);
-    const randomColumn = 1;
-    const index = 2;
-    //this.displayedColumns.push(this.displayedColumns[randomColumn]);
-    console.log(this.displayedColumns);
-    let ar = this.displayedColumns;
+  // addColumn() {
+  //   const randomColumn = Math.floor(Math.random() * this.displayedColumns.length);
+  //   this.displayedColumns.push(this.displayedColumns[randomColumn]);
+  //   this.displayedColumns.push(this.displayedColumns[randomColumn]);
+  // }
 
-    console.log("Before:\n" + ar);
-    ar.splice(index, 0, this.displayedColumns[randomColumn]);
-    console.log("After:\n" + ar);
-  }
+  // removeColumn() {
+  //   if (this.displayedColumns.length) {
+  //     this.displayedColumns.pop();
+  //   }
+  // }
 
-  removeColumn() {
-    if (this.displayedColumns.length) {
-      this.displayedColumns.pop();
-    }
-  }
   removeColumnDynamic(i:any) {
-    if (this.displayedColumns) {
-      this.displayedColumns.pop();
-    }
+    // if (this.displayedColumns) {
+    //   this.displayedColumns.pop();
+    // }
   }
 
   getColumnIndex(name: string): number {
@@ -157,16 +152,13 @@ export class BrokerageUploadComponent implements OnInit {
 
 
 
-  addData() {
-    const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
-    this.dataSource.push(ELEMENT_DATA[randomElementIndex]);
-    this.table.renderRows();
-  }
+  // addData() {
+  //   const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
+  //   this.dataSource.push(ELEMENT_DATA[randomElementIndex]);
+  //   this.table.renderRows();
+  // }
 
   addDataDynamic(index:any) {
-    // const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);
-    // this.dataSource.push(ELEMENT_DATA[randomElementIndex]);
-    // this.table.renderRows();
     let ar = this.dataSource;
     //console.log("Before:\n" + ar);
     ar.splice(index, 0, this.dataSource[index]);
@@ -179,6 +171,11 @@ export class BrokerageUploadComponent implements OnInit {
     this.table.renderRows();
   }
 
+
+  /* upload excel popup */
+  openUploadExcelDialog() {
+    this.dialog.open(ExcelUploadDialogComponent, { width: '548px', panelClass: 'upload-excel-dialog' });
+  }
 
 
 }

@@ -18,6 +18,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
+import { ExcelUploadDialogComponent } from './components/dialogs/excel-upload-dialog/excel-upload-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     CreatedFilterComponent,
     ShortingFilterComponent,
     SearchBoxComponent,
-    BrokerageUploadComponent
+    BrokerageUploadComponent,
+    ExcelUploadDialogComponent
   ],
   imports: [
     CommonModule,
@@ -41,6 +45,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatIconModule,
     MatCardModule,
     MatSlideToggleModule,
+    MatDialogModule,
+    MatRadioModule,
   ],
   exports: [
     LayoutComponent,

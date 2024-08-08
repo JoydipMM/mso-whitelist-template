@@ -5,13 +5,13 @@ import { LayoutComponent } from './layout/layout.component';
 import { BrokerageUploadComponent } from './pages/brokerage-upload/brokerage-upload.component';
 
 const wroutes: Routes = [
-  // {
-  //   path: "",
-  //   component: LayoutComponent,
-  //   children: [
-  //     { path: '', component: HomeComponent },
-  //   ]
-  // },
+  {
+    path: "home",
+    component: LayoutComponent,
+    children: [
+      { path: '', component: HomeComponent },
+    ]
+  },
   // { path: 'brokerage-upload', component: BrokerageUploadComponent },
   { path: '', component: BrokerageUploadComponent },
 ];

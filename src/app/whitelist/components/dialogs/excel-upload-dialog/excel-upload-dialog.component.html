@@ -1,0 +1,163 @@
+<div class="mat-dialog-fullwrap">
+    <button class="mat-dilog-close-btn" mat-dialog-close><img src="assets/images/whitelist-red-close-icon.svg" /></button>
+    <div class="mat-dialog-header">Excel Document upload</div>
+    <mat-dialog-content>
+        <div class="dialog-field-row">
+            <label class="dialog-field-label">AMC Name <span class="text-danger">*</span> </label>
+            <div class="dialog-field-contentwrap">
+                <div class="whtlst-field-wrap">
+                    <ng-multiselect-dropdown
+                        class="normal white-bg"
+                        [placeholder]="'Select AMC'"
+                        [settings]="amcdropdownSettings"
+                        [data]="amcnameList"
+                        [(ngModel)]="selectedamcnameItems"
+                        (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)"
+                    >
+                    </ng-multiselect-dropdown>
+                </div>
+            </div>
+        </div>
+        <div class="mat-dialog-shadow-box info-box">
+            <img class="mat-dialog-shadow-icon" src="assets/images/whitelist-blue-info-icon.svg" />
+            <div>File Name will be combination of AMC Name & Period Values, But you can also give custo names of your file</div>
+        </div>
+        
+        <div class="dialog-field-row">
+            <label class="dialog-field-label">Period <span class="text-danger">*</span> </label>
+            <div class="dialog-field-contentwrap">
+                <div class="mat-dialog-shadow-box period-box">
+                    <!-- <div class="whtlst-filter-row">
+                        <div class="whtlst-filter-col col-50">
+                            dfgdfgdf
+                        </div>
+                        <div class="whtlst-filter-col col-50">
+                            dfgdfg
+                        </div>
+                    </div> -->
+                    <mat-radio-group class="whtlst-filter-row" aria-label="Select an option" [(ngModel)] = "PeriodType">
+                        <mat-radio-button class="whtlst-filter-col col-50 sm-radio" value="Quarterly" [checked]="true">Quarterly</mat-radio-button>
+                        <mat-radio-button class="whtlst-filter-col col-50 sm-radio"  value="Monthly" [checked]="false">Monthly</mat-radio-button>
+                    </mat-radio-group>
+                    <div class="whtlst-filter-row" *ngIf="PeriodType === 'Quarterly'">
+                        <div class="whtlst-filter-col col-50">
+                            <div class="whtlst-field-wrap">
+                                <ng-multiselect-dropdown
+                                    class="normal single small-width"
+                                    [placeholder]="'Select'"
+                                    [settings]="amcFYeardropdownSettings"
+                                    [data]="amcFYearList"
+                                    [(ngModel)]="selectedamcFYearItems"
+                                    (onSelect)="onItemSelect($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                >
+                                </ng-multiselect-dropdown>
+                            </div>
+                        </div>
+                        <div class="whtlst-filter-col col-50">
+                            <div class="whtlst-field-wrap">
+                                <ng-multiselect-dropdown
+                                    class="normal single small-width"
+                                    [placeholder]="'Select'"
+                                    [settings]="amcQuarterdropdownSettings"
+                                    [data]="amcQuarterList"
+                                    [(ngModel)]="selectedamcQuarterItems"
+                                    (onSelect)="onItemSelect($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                >
+                                </ng-multiselect-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="whtlst-filter-row" *ngIf="PeriodType === 'Monthly'">
+                        <div class="whtlst-filter-col col-50">
+                            <div class="whtlst-field-wrap">
+                                <ng-multiselect-dropdown
+                                    class="normal single small-width"
+                                    [placeholder]="'Select'"
+                                    [settings]="amcCldrYeardropdownSettings"
+                                    [data]="amcCldrYearList"
+                                    [(ngModel)]="selectedamcCldrYearItems"
+                                    (onSelect)="onItemSelect($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                >
+                                </ng-multiselect-dropdown>
+                            </div>
+                        </div>
+                        <div class="whtlst-filter-col col-50">
+                            <div class="whtlst-field-wrap">
+                                <ng-multiselect-dropdown
+                                    class="normal single small-width"
+                                    [placeholder]="'Select'"
+                                    [settings]="amcMonthdropdownSettings"
+                                    [data]="amcMonthList"
+                                    [(ngModel)]="selectedamcMonthItems"
+                                    (onSelect)="onItemSelect($event)"
+                                    (onSelectAll)="onSelectAll($event)"
+                                >
+                                </ng-multiselect-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- start -->
+        <div class="uploadfile-frame">
+            <div class="uploadfile-plus"></div>
+            <div class="uploadfile-content-col">
+                <h3 class="uploadfile-title">Drag and drop or <a href="javascript:void(0);">Upload file</a></h3>
+                <p class="uploadfile-para">Ideally, file can be an Image or a PDF<br>Maximum size allowed is 5 MB</p>
+            </div>
+       </div>
+       <div class="modal-info-section">
+            <div class="mat-dialog-header left">Recently uploading Files</div>
+            <ul class="modal-email-list">
+                <li>
+                    <div class="uploadfile-prgrs-box">
+                        <img src="assets/images/whitelist-excel-2-icon.svg" class="prgrs-icon" />
+                        <div class="prgrs-bar-col">
+                            <h4 class="prgrs-bar-title">Regulatory_Compliance.pdf</h4>
+                            <div class="prgrs-bar"><span style="width:10%"></span></div>
+                            <h5 class="prgrs-bar-status"><span>Uploading...</span></h5>
+                        </div>
+                        <button class="prgrs-icn-btn"><img src="assets/images/upload-close-icon.svg" /></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="uploadfile-prgrs-box">
+                        <img src="assets/images/upload-file-icon.png" class="prgrs-icon" />
+                        <div class="prgrs-bar-col">
+                            <h4 class="prgrs-bar-title">Market_Research.docx</h4>
+                            <div class="prgrs-bar"><span style="width:100%"></span></div>
+                            <h5 class="prgrs-bar-status success"><span>Uploaded 3.75 MB</span><img src="assets/images/upload-done-icon.png" class="prgrs-icn" /></h5>
+                        </div>
+                        <button class="prgrs-icn-btn"><img src="assets/images/whitelist-red-close-icon.svg" /></button>
+                    </div>
+                </li>
+                <li>
+                    <div class="uploadfile-prgrs-box">
+                        <img src="assets/images/upload-error-file-icon.png" class="prgrs-icon" />
+                        <div class="prgrs-bar-col">
+                            <h4 class="prgrs-bar-title">Regulatory_Compliance.zip</h4>
+                            <div class="prgrs-bar"><span style="width:1%"></span></div>
+                            <h5 class="prgrs-bar-status error"><span>File format not supported</span></h5>
+                        </div>
+                        <button class="prgrs-icn-btn"><img src="assets/images/whitelist-red-close-icon.svg" /></button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <!-- closed -->
+
+
+
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button class="dialog-btn" mat-dialog-close cdkFocusInitial>Yes, Proceed</button>
+    </mat-dialog-actions>
+</div>

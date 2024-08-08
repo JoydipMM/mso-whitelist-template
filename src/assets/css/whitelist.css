@@ -53,7 +53,7 @@
 /* multi select dropdown css start */
 .multiselect-dropdown{ border-radius: 5px; background-color: #EFF0F6; border-color: #EFF0F6; }
 .multiselect-dropdown .dropdown-btn{ border-color: #EFF0F6 !important; height: 42px; display: inline-flex !important; align-items: center; font-size: 11px !important; font-weight: 700 !important; color: #848484 !important; }
-.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ width: 32px !important;  background: url('./../images/dropdown-down-arrow.svg') no-repeat 15px 18px; }
+.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ width: 32px !important;  background: url('./../images/dropdown-down-arrow.svg') no-repeat 15px 18px; background-position: center center !important; }
 .multiselect-dropdown .dropdown-btn .dropdown-multiselect--active .dropdown-multiselect__caret{ background: url('./../images/dropdown-down-arrow.svg') no-repeat 4px 14px; }
 .multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret:before{ display: none; }
 /* list box css */
@@ -97,6 +97,17 @@
 .storting-type .multiselect-dropdown .multiselect-item-checkbox input[type=checkbox] + div { padding-left: 12px !important; padding-right: 12px !important; color: #A0A3BD !important; }
 .storting-type .multiselect-dropdown .dropdown-list li{ padding: 8px 15px 7px !important; border-bottom: #E7E7E7 solid 1px !important; }
 .storting-type .multiselect-dropdown .dropdown-list li:last-child{  border-bottom: none !important; }
+/* single small */
+.single.small-width .multiselect-dropdown .dropdown-btn{ height: 35px !important; }
+.single.small-width .multiselect-dropdown .dropdown-btn .selected-item-container .selected-item{ color: #000 !important; }
+.single.small-width .multiselect-dropdown .multiselect-item-checkbox input[type=checkbox] + div { padding-left: 12px !important; padding-right: 12px !important; color: #000 !important; }
+.single.small-width .multiselect-dropdown .multiselect-item-checkbox input[type=checkbox]:checked + div { color: #324AC4 !important; }
+.single.small-width .multiselect-dropdown .dropdown-list li{ padding: 8px 15px 7px !important; border-bottom: #E7E7E7 solid 1px !important; text-align: center; }
+.single.small-width .multiselect-dropdown .dropdown-list li:last-child{  border-bottom: none !important; }
+/* white bg */
+.white-bg .multiselect-dropdown{  background-color: #ffffff; border-color: #ffffff; }
+.white-bg .multiselect-dropdown .dropdown-btn{  font-size: 13px !important; border: 1px solid #fff; box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.09); }
+.white-bg .multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ height: 35px !important; top: 3px !important; }
 /* multi select dropdown css ended */
 
 
@@ -227,10 +238,79 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 .whtlst-brkage-sldr-imgframe:nth-child(3) img{ margin: -24px; }
 /* brokerage slider css ended */
 
-.mat-card{ padding: 0px !important; font-family: 'Mulish', sans-serif; border: 1px solid rgba(182, 233, 255, 1); border-radius: 10px !important; box-shadow: none !important;  }
+/* Mat card css start */
+.mat-card{ padding: 0px !important; border: 1px solid rgba(182, 233, 255, 1); border-radius: 10px !important; box-shadow: none !important;  }
 .mat-card .mat-card-header{ min-height: 56px; display: flex; align-items: center; background-color: rgba(36, 48, 101, 1); padding:10px 30px; color: #fff; border-radius: 10px 10px 0px 0px; }
 .mat-card .mat-card-header-text{ margin: 0px; }
 .mat-card .mat-card-content{ padding:20px 30px 50px !important; }
 .mat-card .mat-card-title{ margin: 0px !important; }
 .mat-card .mat-card-title.sm{ font-size: 14px !important; }
 .mat-card .mat-card-content p{ font-size: 16px; color: rgba(46, 58, 89, 1); font-weight: 700; line-height: 1.2; }
+/* Mat card css ended */
+
+/* mat dialog css start */
+.mat-dialog-container{ border-radius: 10px !important; padding: 15px 35px !important; font-family: 'Mulish', sans-serif; position: relative; }
+.mat-dialog-fullwrap{ width: 100%; display: inline-block; position: relative; }
+.mat-dialog-header{ width: 100%; margin: 0px 0px 12px 0px;  display: inline-flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: rgba(46, 58, 89, 0.9); font-family: "Poppins", sans-serif;  position: relative; }
+.mat-dialog-header.left{ justify-content: flex-start; }
+.mat-dilog-close-btn{ width: auto; height: auto; position: absolute; top: 0px; right: -10px; appearance: none; background: transparent; z-index: 1; }
+.mat-dilog-close-btn>img{ width: 15px; filter: brightness(0); opacity: 0.6; }
+/* mat dialog css ended */
+
+
+/* upload excel popup css start */
+.upload-excel-dialog .mat-dialog-container{ overflow: visible; }
+.dialog-field-row{ width: 100%; display: inline-flex; position: relative; gap: 10px; margin-bottom: 10px; }
+.dialog-field-label{ padding: 10px 0px; width: 30%; color: rgba(0, 0, 0, 1); font-size: 13px; font-weight: 700; margin: 0px; }
+.dialog-field-contentwrap{ flex: 1; position: relative; }
+.mat-dialog-content{ min-height: calc(100vh - 300px); max-height: calc(100vh - 200px); }
+.mat-dialog-content{ max-height:calc(100vh - 400px); width:calc(100% + 30px); padding: 0px 15px; overflow: auto; margin-left: -15px; }
+.mat-dialog-content::-webkit-scrollbar { height: 5px; width: 5px; border: 1px solid #d5d5d5; }
+.mat-dialog-content::-webkit-scrollbar-track { background: #f1f1f1; }
+.mat-dialog-content::-webkit-scrollbar-thumb { background: #3d5bff; }
+.mat-dialog-content::-webkit-scrollbar-thumb:hover { background: #283a9b; }
+.mat-dialog-actions{ min-height: 10px !important; margin: 0px !important; display: inline-flex; align-items: center; gap: 20px; justify-content: center; padding: 40px 0px 20px !important; }
+.mat-dialog-shadow-box{ width: 100%; display: inline-flex; align-items: center; gap: 15px; padding: 9px 12px; border-radius: 5px; box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.09); font-size: 11px; font-weight: 700; color: rgba(132, 132, 132, 1); line-height: 1.4; margin-bottom: 20px; }
+.mat-dialog-shadow-icon{ width: 20px; }
+.mat-dialog-shadow-box.info-box{ padding: 9px 24px; }
+.mat-dialog-shadow-box.period-box{ position: relative; flex-direction: column; }
+.dialog-btn{ width: auto; min-width: 130px; min-height: 40px; border-radius: 24px; border: #283a9b solid 1px; background-color: #283a9b; color: #fff; font-size: 12px; font-weight: 600; display: inline-flex; justify-content: center; align-items: center; padding: 5px 20px; box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.08); }
+.dialog-btn:focus{ outline: none; }
+
+.modal-email-list{ width:100%; padding: 0px; margin: 0px; list-style-type: none; display: inline-flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.modal-email-list>li{ width:100%; position: relative; }
+.uploadfile-frame{ width:100%; height: 105px; display: inline-flex; align-items: center; gap: 50px; position: relative; border: 1px dashed rgba(0, 0, 0, 1); padding: 30px; margin-bottom: 20px; }
+.uploadfile-content-col{ flex: 1; display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0px; }
+.uploadfile-title{ font-size: 14px; color: rgba(0, 0, 0, 1); font-weight: 700; line-height: 1.2; padding: 0px; }
+.uploadfile-title a{ text-decoration: underline; color: rgba(0, 0, 0, 1); }
+.uploadfile-para{ color:rgba(72, 72, 72, 1); font-size: 12px; font-weight: 400; font-style: italic; padding: 0px; line-height: 1.4; margin: 0px; }
+.uploadfile-plus{ width: 45px; height: 45px; position: relative; display: inline-flex; align-items: center; justify-content: center; }
+.uploadfile-plus:before{ content:''; width: 100%; height: 5px; border-radius: 10px; background-color: rgba(61, 91, 255, 1); }
+.uploadfile-plus:after{ content:''; width: 5px; height: 100%; border-radius: 10px; background-color: rgba(61, 91, 255, 1); position: absolute; left: 50%; top: 0; transform: translateX(-50%); }
+.uploadfile-modal .modal-section-title{ font-size: 16px; color:rgba(46, 58, 89, 0.9); font-weight: 700; margin-bottom: 15px; }
+.uploadfile-prgrs-box{ width: 100%; display: inline-flex; align-items: flex-start; position: relative; gap: 20px; }
+.prgrs-icon{ width: 30px; flex-shrink: 0; }
+.prgrs-bar-col{ display: inline-flex; flex-direction: column; gap: 3px; position: relative; align-items: flex-start; flex: 1; }
+.prgrs-bar{ width: 100%; height: 6px; border-radius: 5px; position: relative; overflow: hidden; background-color: rgba(235, 235, 235, 1); }
+.prgrs-bar>span{ height: 100%; position: absolute; top:0px; left: 0px; border-radius: 5px; background: linear-gradient(90deg, #69A7FF 41.09%, #3D5BFF 100%); }
+.prgrs-bar-title{ font-size: 12px; font-weight: 400; color: rgba(46, 58, 89, 0.9); line-height: 1.2; padding: 0px; margin: 0px 0px 8px 0px; }
+.prgrs-bar-status{ font-size: 10px; font-weight: 400; color: rgba(63, 94, 255, 1); font-style: italic; padding: 0px; margin: 0px; display: inline-flex; }
+.prgrs-bar-status .prgrs-icn{ width: 10px; height: 10px; flex-shrink: 0; margin: 0px 5px; }
+.prgrs-bar-status.success{ color: rgba(72, 137, 0, 1); }
+.prgrs-bar-status.error{ color: rgba(244, 67, 54, 1); }
+.prgrs-icn-btn{ width: 30px; height: 30px; padding: 0px; margin: 0px; border: none; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; outline: none; appearance: none; flex-shrink: 0; }
+/* upload excel popup css ended */
+
+
+/* mat radio css start */
+.mat-radio-button{ color: rgba(0, 0, 0, 1) !important; font-size: 11px !important; font-family: 'Mulish', sans-serif; }
+.mat-radio-button .mat-radio-ripple{ display: none !important; }
+.mat-radio-outer-circle{ border-color: rgba(69, 143, 246, 1) !important; }
+.mat-radio-inner-circle{ background-color: rgba(69, 143, 246, 1) !important; }
+.sm-radio .mat-radio-container{ height: 15px !important; width: 15px !important; }
+.sm-radio .mat-radio-outer-circle { height: 15px !important; width: 15px !important; border-width: 2px !important; }
+.sm-radio .mat-radio-inner-circle{ height: 15px !important; width: 15px !important; }
+/* mat radio css ended */
+
+
+

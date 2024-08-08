@@ -34,7 +34,7 @@
           <button class="filter-icn-btn">
             <img src="assets/images/whitelist-graph-icon.svg" />
           </button>
-          <button class="filter-icn-btn">
+          <button class="filter-icn-btn" (click)="openUploadExcelDialog()">
             <img src="assets/images/whitelist-upload-icon.svg" />
           </button>
           <button class="filter-icn-btn">
@@ -70,7 +70,7 @@
         <div class="reorder-table-wrap" #reorderTable>
 
           <!-- column drag table start -->
-          <table class="colum-table" style="width:100%" mat-table [dataSource]="dataSource" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop2($event)">
+          <table class="colum-table" style="width:100%" mat-table [dataSource]="dataSource" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="columnDrop($event)">
 
             <ng-container matColumnDef="position">
               <th mat-header-cell cdkDrag *matHeaderCellDef class="nodrag">
@@ -208,7 +208,7 @@
 
           <!-- row drag table start -->
           <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8 row-table" cdkDropList
-            (cdkDropListDropped)="drop($event)" cdkDropListData="dataSource">
+            (cdkDropListDropped)="rowDrop($event)" cdkDropListData="dataSource">
 
             <!-- Position Column -->
             <ng-container matColumnDef="position">
