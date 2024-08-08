@@ -22,6 +22,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import { ExcelUploadDialogComponent } from './components/dialogs/excel-upload-dialog/excel-upload-dialog.component';
 import { ShowHiddenRowsDialogComponent } from './components/dialogs/show-hidden-rows-dialog/show-hidden-rows-dialog.component';
+import { ShowHiddenColumnsDialogComponent } from './components/dialogs/show-hidden-columns-dialog/show-hidden-columns-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ShowHiddenRowsDialogComponent } from './components/dialogs/show-hidden-
     SearchBoxComponent,
     BrokerageUploadComponent,
     ExcelUploadDialogComponent,
-    ShowHiddenRowsDialogComponent
+    ShowHiddenRowsDialogComponent,
+    ShowHiddenColumnsDialogComponent
   ],
   imports: [
     CommonModule,

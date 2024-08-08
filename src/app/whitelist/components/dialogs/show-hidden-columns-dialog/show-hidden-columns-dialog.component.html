@@ -1,0 +1,28 @@
+<div class="mat-dialog-fullwrap">
+    <button class="mat-dilog-close-btn" mat-dialog-close><img src="assets/images/whitelist-red-close-icon.svg" /></button>
+    <div class="mat-dialog-header">Unhide Columns</div>
+    <mat-dialog-content>
+        <div class="rows-accro-list">
+            <ng-container *ngFor="let row of [1,2,3,4,5]; let i = index">
+                <div class="rows-accro-box">
+                    <div class="rows-accro-hdr">
+                        <div class="row">
+                            <div class="col-3">Column 03</div>
+                            <div class="col-3">Text Field</div>
+                            <div class="col-3">Fund House</div>
+                            <div class="col-3"><button class="dialog-btn white sm">Unhide</button></div>
+                        </div>
+                        <!-- <div class="rows-accro-hdr-title">
+                            <span>Row {{i}}</span><img src="assets/images/dropdown-down-arrow.svg" class="rows-accro-hdr-arrow" />
+                        </div> -->
+                        
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button class="dialog-btn white sm" mat-dialog-close cdkFocusInitial>Yes, Proceed</button>
+    </mat-dialog-actions>
+</div>
