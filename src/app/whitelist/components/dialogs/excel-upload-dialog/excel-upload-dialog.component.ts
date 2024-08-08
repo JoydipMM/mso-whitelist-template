@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { PublishWarningDialogComponent } from '../publish-warning-dialog/publish-warning-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-excel-upload-dialog',
@@ -36,7 +38,7 @@ export class ExcelUploadDialogComponent implements OnInit {
 
   PeriodType:any = 'Quarterly';
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -176,6 +178,12 @@ export class ExcelUploadDialogComponent implements OnInit {
   }
   public onDeSelectAll(items: any) {
     console.log(items);
+  }
+
+
+  /* publish warning popup */
+  openPublishWarningDialog() {
+    this.dialog.open(PublishWarningDialogComponent, { width: '450px', panelClass: 'publish-wrining-dialog' });
   }
 
 }

@@ -158,6 +158,6 @@
 
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button class="dialog-btn" mat-dialog-close cdkFocusInitial>Yes, Proceed</button>
+        <button class="dialog-btn" cdkFocusInitial (click)="openPublishWarningDialog()">Yes, Proceed</button>
     </mat-dialog-actions>
 </div>

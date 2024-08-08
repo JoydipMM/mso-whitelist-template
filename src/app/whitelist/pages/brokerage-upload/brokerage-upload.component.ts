@@ -75,7 +75,7 @@ export class BrokerageUploadComponent implements OnInit {
       itemsShowLimit: 1,
     };
 
-    //this.openUploadExcelDialog();
+    this.openUploadExcelDialog();
     //this.openHiddenRowsDialog();
   }
 
@@ -189,6 +189,5 @@ export class BrokerageUploadComponent implements OnInit {
   openHiddenColumnDialog() {
     this.dialog.open(ShowHiddenColumnsDialogComponent, { width: '480px', panelClass: 'hidden-columns-dialog' });
   }
-
 
 }
