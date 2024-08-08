@@ -21,6 +21,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import { ExcelUploadDialogComponent } from './components/dialogs/excel-upload-dialog/excel-upload-dialog.component';
+import { ShowHiddenRowsDialogComponent } from './components/dialogs/show-hidden-rows-dialog/show-hidden-rows-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ExcelUploadDialogComponent } from './components/dialogs/excel-upload-di
     ShortingFilterComponent,
     SearchBoxComponent,
     BrokerageUploadComponent,
-    ExcelUploadDialogComponent
+    ExcelUploadDialogComponent,
+    ShowHiddenRowsDialogComponent
   ],
   imports: [
     CommonModule,

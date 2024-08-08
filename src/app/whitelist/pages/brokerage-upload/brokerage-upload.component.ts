@@ -4,6 +4,7 @@ import {MatTable, MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { ExcelUploadDialogComponent } from '../../components/dialogs/excel-upload-dialog/excel-upload-dialog.component';
+import { ShowHiddenRowsDialogComponent } from '../../components/dialogs/show-hidden-rows-dialog/show-hidden-rows-dialog.component';
 
 export interface PeriodicElement {
   name: string;
@@ -73,7 +74,8 @@ export class BrokerageUploadComponent implements OnInit {
       itemsShowLimit: 1,
     };
 
-    this.openUploadExcelDialog();
+    //this.openUploadExcelDialog();
+    this.openHiddenRowsDialog();
   }
 
 
@@ -175,6 +177,11 @@ export class BrokerageUploadComponent implements OnInit {
   /* upload excel popup */
   openUploadExcelDialog() {
     this.dialog.open(ExcelUploadDialogComponent, { width: '548px', panelClass: 'upload-excel-dialog' });
+  }
+
+  /* show hidden popup */
+  openHiddenRowsDialog() {
+    this.dialog.open(ShowHiddenRowsDialogComponent, { width: '480px', panelClass: 'hidden-rows-dialog' });
   }
 
 

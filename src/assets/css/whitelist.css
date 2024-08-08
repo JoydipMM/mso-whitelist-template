@@ -20,6 +20,7 @@
 .round-box{ width: 100%; display: inline-block; padding: 18px 28px; border-radius: 12px; box-shadow: 5.16px 12.89px 28.35px 3.87px rgba(0, 0, 0, 0.25); background-color: #fff; margin-bottom: 60px; }
 
 /* common button css start */
+.c-pointer{ cursor: pointer; }
 .whtlst-btn-grp{ position: relative; display: inline-flex; align-items: center; gap: 10px; }
 .whtlst-btn{ width: auto; min-width: 142px; height: 40px; display: inline-flex; align-items: center; justify-content: center; gap: 5px; color: #fff; font-size: 14px; font-weight: 700; border-radius: 9px; background: rgba(69, 143, 246, 1); border:rgba(69, 143, 246, 1) solid 1px; cursor: pointer; }
 .whtlst-btn:focus{ outline: none; }
@@ -264,7 +265,7 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 .dialog-field-label{ padding: 10px 0px; width: 30%; color: rgba(0, 0, 0, 1); font-size: 13px; font-weight: 700; margin: 0px; }
 .dialog-field-contentwrap{ flex: 1; position: relative; }
 .mat-dialog-content{ min-height: calc(100vh - 300px); max-height: calc(100vh - 200px); }
-.mat-dialog-content{ max-height:calc(100vh - 400px); width:calc(100% + 30px); padding: 0px 15px; overflow: auto; margin-left: -15px; }
+.mat-dialog-content{ max-height:calc(100vh - 400px); width:calc(100% + 50px); padding: 0px 15px; overflow: auto; margin-left: -15px; }
 .mat-dialog-content::-webkit-scrollbar { height: 5px; width: 5px; border: 1px solid #d5d5d5; }
 .mat-dialog-content::-webkit-scrollbar-track { background: #f1f1f1; }
 .mat-dialog-content::-webkit-scrollbar-thumb { background: #3d5bff; }
@@ -274,8 +275,12 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 .mat-dialog-shadow-icon{ width: 20px; }
 .mat-dialog-shadow-box.info-box{ padding: 9px 24px; }
 .mat-dialog-shadow-box.period-box{ position: relative; flex-direction: column; }
-.dialog-btn{ width: auto; min-width: 130px; min-height: 40px; border-radius: 24px; border: #283a9b solid 1px; background-color: #283a9b; color: #fff; font-size: 12px; font-weight: 600; display: inline-flex; justify-content: center; align-items: center; padding: 5px 20px; box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.08); }
+.dialog-btn{ width: auto; min-width: 130px; min-height: 40px; border-radius: 24px; border: #283a9b solid 1px; background-color: #283a9b; color: #fff; font-size: 12px; font-weight: 600; display: inline-flex; justify-content: center; align-items: center; padding: 5px 20px; box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.08); transition: all ease-in-out 0.2s; }
 .dialog-btn:focus{ outline: none; }
+.dialog-btn.sm{ min-width: 50px; min-height: 31px; font-size: 11px; line-height: 1; font-weight: 700; }
+.dialog-btn.white{ background-color: #fff; border-color:#fff; color: rgba(36, 48, 101, 1); }
+.dialog-btn.white:hover{ background-color: rgba(182, 233, 255, 1); border-color:rgba(182, 233, 255, 1); }
+.dialog-btn.white:focus, .dialog-btn.white.active{ background-color: rgba(36, 48, 101, 1); border-color:rgba(36, 48, 101, 1); color: #fff; }
 
 .modal-email-list{ width:100%; padding: 0px; margin: 0px; list-style-type: none; display: inline-flex; flex-direction: column; align-items: flex-start; gap: 14px; }
 .modal-email-list>li{ width:100%; position: relative; }
@@ -300,6 +305,23 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 .prgrs-bar-status.error{ color: rgba(244, 67, 54, 1); }
 .prgrs-icn-btn{ width: 30px; height: 30px; padding: 0px; margin: 0px; border: none; background: transparent; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; outline: none; appearance: none; flex-shrink: 0; }
 /* upload excel popup css ended */
+
+/* show hidden rows popup css start */
+.hidden-rows-dialog .mat-dialog-container{ padding: 25px 35px !important; }
+.hidden-rows-dialog .mat-dialog-content { min-height: 200px; max-height: 300px; width: calc(100% + 40px); margin: 0px 0px 0px -15px; padding: 0px 15px 0px 15px !important; }
+.hidden-rows-dialog .mat-dialog-actions{ padding: 10px 0px 10px !important; }
+.rows-accro-box{ width: 100%; display: inline-flex; position: relative; flex-direction: column; overflow: hidden; border-radius: 8px; margin-bottom: 5px; }
+.rows-accro-box .rows-accro-hdr{ width: 100%; height: 41px; padding: 8px 28px; display: inline-flex; align-items: center; justify-content: space-between; background-color: rgba(241, 251, 255, 1); border: rgba(241, 251, 255, 1) solid 1px; color: rgba(32, 70, 250, 1); font-size: 11px; font-weight: 700; border-radius: 8px; }
+.rows-accro-box .rows-accro-hdr-title{ display: inline-flex; align-items: center; gap: 15px; }
+.rows-accro-box .rows-accro-hdr-arrow{ width: 12px; transition: all ease-in-out 0.2s; }
+.rows-accro-box .rows-accro-content{ width: 100%; height: 0px; border: 1px solid rgba(204, 204, 204, 1); border-radius: 0px 0px 8px 8px; transition: all ease-in-out 0.2s; overflow: hidden; opacity: 0;  }
+.rows-accro-box .rows-accro-cntwrap{ width: 100%; padding: 15px 28px; }
+.rows-accro-box.active .rows-accro-hdr{ border-radius: 8px 8px 0px 0px; background-color: rgba(36, 48, 101, 1); border-color: rgba(36, 48, 101, 1); color: #fff; }
+.rows-accro-box.active .rows-accro-hdr-arrow{ filter: brightness(100); transform: rotate(180deg); }
+.rows-accro-box.active .rows-accro-content{ height: auto; opacity: 1; }
+.rows-info-label{ width: 100%; font-size: 9px; font-weight: 600; color: rgba(46, 58, 89, 1); line-height: 1.2; margin-bottom: 5px }
+.rows-info-content{ width: 100%; font-size: 10px; font-weight: 700; color: rgba(46, 58, 89, 1); line-height: 1.2; margin-bottom: 10px; }
+/* show hidden rows popup css ended */
 
 
 /* mat radio css start */

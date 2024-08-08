@@ -1,0 +1,51 @@
+<div class="mat-dialog-fullwrap">
+    <button class="mat-dilog-close-btn" mat-dialog-close><img src="assets/images/whitelist-red-close-icon.svg" /></button>
+    <div class="mat-dialog-header">Unhide Rows</div>
+    <mat-dialog-content>
+        <ng-container *ngFor="let row of [1,2,3,4,5]; let i = index">
+            <div class="rows-accro-box _active" [ngClass]="{'active': i === accroIndex && accroOpen === true }">
+                <div class="rows-accro-hdr">
+                    <div class="rows-accro-hdr-title c-pointer" (click)="accroOpenEvent(i, true)">
+                        <span>Row {{i}}</span><img src="assets/images/dropdown-down-arrow.svg" class="rows-accro-hdr-arrow" />
+                    </div>
+                    <button class="dialog-btn white sm">Unhide</button>
+                </div>
+                <div class="rows-accro-content">
+                    <div class="rows-accro-cntwrap">
+                        <div class="row">
+                            <div class="col-5">
+                                <h3 class="rows-info-label">Scheme Name</h3>
+                                <div class="rows-info-content">360 ONE ELSS Tax Saver Nifty 50 Index Fund-Reg(G)</div>
+                            </div>
+                            <div class="col-3">
+                                <h3 class="rows-info-label">Asset Type</h3>
+                                <div class="rows-info-content">Equity</div>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="rows-info-label">Fund House</h3>
+                                <div class="rows-info-content">WhiteOak Capital Mutual Fund</div>
+                            </div>
+                            <div class="col-5">
+                                <h3 class="rows-info-label">Fund House</h3>
+                                <div class="rows-info-content">Equity - Sectoral Fund - Pharma & Health Care</div>
+                            </div>
+                            <div class="col-3">
+                                <h3 class="rows-info-label">1st Year Trailing</h3>
+                                <div class="rows-info-content">12.9</div>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="rows-info-label">2nd Year Trailing</h3>
+                                <div class="rows-info-content">11.9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button class="dialog-btn white sm" mat-dialog-close cdkFocusInitial>Yes, Proceed</button>
+    </mat-dialog-actions>
+</div>
