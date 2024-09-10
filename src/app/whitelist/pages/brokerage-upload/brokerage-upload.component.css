@@ -1,4 +1,5 @@
-.reorder-table-wrap{ width: calc(100% + 0px ); position: relative; padding: 48px 30px 0px 45px; overflow: hidden; overflow-x: auto; }
+/* .reorder-table-wrap{ width: calc(100% + 0px ); position: relative; padding: 48px 30px 0px 45px; overflow: hidden; overflow-x: auto; } */
+.reorder-table-wrap{ width: calc(100% - 110px); min-height: 415px; position: relative; padding: 48px 0px 0px 45px; overflow: hidden; overflow-x: auto; margin: 0px auto; }
 
 .mat-header-cell { height: 56px; font-size: 12px; font-weight: 500; padding: 0px 6px !important; margin: 0px; border-bottom: transparent solid 1px !important; }
 .mat-cell-wrap{ display: flex; align-items: center; position: relative; gap: 5px; height: 100%; background:rgba(36, 48, 101, 1); color: #fff; justify-content: flex-start; font-size: 13px; padding: 10px 20px; }
@@ -85,3 +86,5 @@
 .slide-switch ::ng-deep .mat-slide-toggle-thumb { height: 14px; width: 14px; box-shadow: none; }
 .slide-switch.mat-checked ::ng-deep .mat-slide-toggle-thumb{ background-color: #fff !important; }
 .slide-switch.mat-checked ::ng-deep .mat-slide-toggle-bar{ background-color: rgba(36, 48, 101, 1) !important; }
+
+.hdr-collaps{ position: sticky; top: 100px; z-index: 1; overflow: initial; overflow-x: initial; }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import {CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray} from '@angular/cdk/drag-drop';
 import {MatTable, MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
@@ -47,6 +47,13 @@ export class BrokerageUploadComponent implements OnInit {
   selectedamcnameItems:any = [];
   amcdropdownSettings:any = {};
 
+  /* filter search overlay dropdown */
+  srchDropdwnStatus:boolean = false;
+
+  tableScrollClass : string = 'reorder-table-wrap';
+  @ViewChild('reorderTable') reorderTable:any = ElementRef;
+  tableHeight:any;
+
   constructor(public dialog: MatDialog) {
 
    }
@@ -75,7 +82,7 @@ export class BrokerageUploadComponent implements OnInit {
       itemsShowLimit: 1,
     };
 
-    this.openUploadExcelDialog();
+    //this.openUploadExcelDialog();
     //this.openHiddenRowsDialog();
   }
 
@@ -189,5 +196,28 @@ export class BrokerageUploadComponent implements OnInit {
   openHiddenColumnDialog() {
     this.dialog.open(ShowHiddenColumnsDialogComponent, { width: '480px', panelClass: 'hidden-columns-dialog' });
   }
+
+
+  srchDropdwnAction(){
+    this.srchDropdwnStatus = ! this.srchDropdwnStatus;
+  }
+
+  ngAfterViewInit() {
+    this.tableHeight = this.reorderTable.nativeElement.offsetHeight - 100;
+    //console.log("fdfdsf "+ this.reorderTable.nativeElement.offsetHeight)
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (document.body.scrollTop > 200 || (document.documentElement.scrollTop > 200 && document.documentElement.scrollTop < this.tableHeight))
+    {
+          this.tableScrollClass = 'reorder-table-wrap hdr-collaps';
+        
+        }else {
+          this.tableScrollClass = 'reorder-table-wrap';
+        }
+    }
+      
+
 
 }

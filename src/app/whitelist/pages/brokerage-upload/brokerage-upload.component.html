@@ -28,7 +28,7 @@
           <button class="filter-icn-btn">
             <img src="assets/images/whitelist-normal-star-icon.svg" />
           </button>
-          <button class="filter-icn-btn active">
+          <button class="filter-icn-btn _active" (click)="srchDropdwnAction()">
             <img src="assets/images/whitelist-filter-icon.svg" />
           </button>
           <button class="filter-icn-btn">
@@ -56,8 +56,11 @@
             </div>
           </button>
           <app-search-box></app-search-box>
+          <app-search-filter *ngIf="srchDropdwnStatus" class="filter-search-overlay"></app-search-filter>
         </div>
       </div>
+
+      
 
 
       <!-- <button mat-raised-button (click)="addColumn()"> Add column </button> -->
@@ -66,8 +69,10 @@
       <!-- <button mat-raised-button (click)="addData()" class="demo-button" style="margin: 0px 20px;">Add Row</button> -->
       <!-- <button mat-raised-button [disabled]="!dataSource.length" (click)="removeData()" class="demo-button">Remove Row</button> -->
 
+      <!-- {{ reorderTable.offsetHeight }} -->
+        <!-- [style.width.px]="reorderTable.offsetWidth" -->
       <div class="broker-table-row">
-        <div class="reorder-table-wrap" #reorderTable>
+        <div [class]="tableScrollClass" #reorderTable >
 
           <!-- column drag table start -->
           <table class="colum-table" style="width:100%" mat-table [dataSource]="dataSource" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="columnDrop($event)">
