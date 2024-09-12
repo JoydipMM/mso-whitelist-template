@@ -1,5 +1,11 @@
+.broker-table-row{ margin-left: -40px; margin-right: -40px; position: relative; margin-bottom: 40px; /*left: 50%; transform: translateX(-50%); */ }
+.broker-table-row.hdr-collaps{ position: sticky; top: 0px; }
 /* .reorder-table-wrap{ width: calc(100% + 0px ); position: relative; padding: 48px 30px 0px 45px; overflow: hidden; overflow-x: auto; } */
-.reorder-table-wrap{ width: calc(100% - 110px); min-height: 415px; position: relative; padding: 48px 0px 0px 45px; overflow: hidden; overflow-x: auto; margin: 0px auto; }
+.reorder-table-wrap{ width: calc(100% - 110px); /*min-height: 415px;*/ position: relative; padding: 48px 0px 0px 45px; overflow: hidden; overflow-x: auto; margin: 0px auto;left: 50%; transform: translateX(-50%);  }
+.reorder-table-wrap.hdr-collaps{ /*position: fixed; top: 170px; z-index: 1; overflow: initial; overflow-x: initial;*/ border: red solid 1px; overflow-y: auto; }
+/* .hdr-collaps .colum-table{ position: fixed; top: 0px; } */
+
+.broker-table-row.hdr-collaps+.whtlst-brkage-section{ margin-top: 0px; }
 
 .mat-header-cell { height: 56px; font-size: 12px; font-weight: 500; padding: 0px 6px !important; margin: 0px; border-bottom: transparent solid 1px !important; }
 .mat-cell-wrap{ display: flex; align-items: center; position: relative; gap: 5px; height: 100%; background:rgba(36, 48, 101, 1); color: #fff; justify-content: flex-start; font-size: 13px; padding: 10px 20px; }
@@ -43,7 +49,8 @@
 .colum-modify-btn>img{ max-width: 20px; max-height: 20px; opacity: 1; transition: all ease-in-out 0.3s; }
 .colum-modify-btn:hover>img{ opacity: 1; }
 
-.row-table{ margin-top: -56px; }
+.row-table{ margin-top: 0px; }
+.row-table ::ng-deep .mat-header-row{ height: 0px; min-height: 0px; opacity: 0; }
 .row-insert-btn{ height: 6px; background-color: transparent; position: absolute; left: -32px; bottom: -5px; z-index: 1; transition: all ease-in-out 0.4s; }
 .row-insert-btn:hover{ background-color: rgba(201, 209, 255, 1); }
 .row-add-btn{ width: 33px; height: 33px; border-radius: 50px; background-color: #fff; box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15); border: none; display: inline-flex; align-items: center; justify-content: center; padding: 0px; position: absolute; left: 0px; top: 50%; transform: translateY(-50%); transition: all ease-in-out 0.4s; opacity: 0; z-index: -1; }
@@ -87,4 +94,3 @@
 .slide-switch.mat-checked ::ng-deep .mat-slide-toggle-thumb{ background-color: #fff !important; }
 .slide-switch.mat-checked ::ng-deep .mat-slide-toggle-bar{ background-color: rgba(36, 48, 101, 1) !important; }
 
-.hdr-collaps{ position: sticky; top: 100px; z-index: 1; overflow: initial; overflow-x: initial; }

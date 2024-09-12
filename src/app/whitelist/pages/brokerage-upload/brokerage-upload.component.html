@@ -56,12 +56,9 @@
             </div>
           </button>
           <app-search-box></app-search-box>
-          <app-search-filter *ngIf="srchDropdwnStatus" class="filter-search-overlay"></app-search-filter>
+          <!-- <app-search-filter *ngIf="srchDropdwnStatus" class="filter-search-overlay"></app-search-filter> -->
         </div>
       </div>
-
-      
-
 
       <!-- <button mat-raised-button (click)="addColumn()"> Add column </button> -->
       <!-- <button mat-raised-button (click)="removeColumn()"> Remove column </button> -->
@@ -71,8 +68,9 @@
 
       <!-- {{ reorderTable.offsetHeight }} -->
         <!-- [style.width.px]="reorderTable.offsetWidth" -->
-      <div class="broker-table-row">
-        <div [class]="tableScrollClass" #reorderTable >
+         <!-- [style.height.px]="tableWrapHeightOnScroll" -->
+      <div [class]="tableWrapClass">
+        <div [style]="{'height': tableWrapHeightOnScroll}" [class]="tableScrollClass" #reorderTable >
 
           <!-- column drag table start -->
           <table class="colum-table" style="width:100%" mat-table [dataSource]="dataSource" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="columnDrop($event)">
@@ -283,10 +281,11 @@
         </div>
       </div>
 
+      {{tableWrapHeightOnScroll}}
 
 
       <!-- card section start -->
-      <div class="whtlst-brkage-section">
+      <div class="whtlst-brkage-section" style="opacity: 0.3;" #childElement>
         <mat-card>
           <mat-card-header>
             <mat-card-title class="sm">Disclaimer</mat-card-title>
@@ -299,7 +298,6 @@
         </mat-card>
       </div>
       <!-- card section ended -->
-
 
 
     </div>
