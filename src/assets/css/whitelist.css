@@ -1,5 +1,3 @@
-.broker-table-row{ margin-left: -40px; margin-right: -40px; position: relative; margin-bottom: 40px;  }
-
 .broker-hd-title-area{ width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-between; position:relative; }
 .broker-hd-filter-group{ width: auto; display: inline-flex; align-items: center; gap: 10px; }
 .filter-icn-btn{ min-width: 50px; height: 37px; position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; border: 1px solid rgba(69, 143, 246, 1); border-radius: 9px; background: transparent; padding: 0px 10px; transition: all ease-in-out 0.2s; }
@@ -52,9 +50,9 @@
 
 
 /* multi select dropdown css start */
-.multiselect-dropdown{ border-radius: 5px; background-color: #EFF0F6; border-color: #EFF0F6; }
-.multiselect-dropdown .dropdown-btn{ border-color: #EFF0F6 !important; height: 42px; display: inline-flex !important; align-items: center; font-size: 11px !important; font-weight: 700 !important; color: #848484 !important; }
-.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ width: 32px !important;  background: url('./../images/dropdown-down-arrow.svg') no-repeat 15px 18px; background-position: center center !important; top: 3px !important; }
+.multiselect-dropdown{ border-radius: 10px; background-color: #fff; border-color: #CCCCCC; }
+.multiselect-dropdown .dropdown-btn{ border-color: #CCCCCC !important; height: 42px; display: inline-flex !important; align-items: center; font-size: 11px !important; font-weight: 700 !important; color: #848484 !important; }
+.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ width: 32px !important;  background: url('./../images/dropdown-down-arrow.svg') no-repeat 15px 18px; background-position: center center !important; }
 .multiselect-dropdown .dropdown-btn .dropdown-multiselect--active .dropdown-multiselect__caret{ background: url('./../images/dropdown-down-arrow.svg') no-repeat 4px 14px; }
 .multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret:before{ display: none; }
 /* list box css */

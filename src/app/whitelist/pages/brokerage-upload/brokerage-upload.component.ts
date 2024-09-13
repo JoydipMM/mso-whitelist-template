@@ -50,9 +50,13 @@ export class BrokerageUploadComponent implements OnInit {
   /* filter search overlay dropdown */
   srchDropdwnStatus:boolean = false;
 
+  tableWrapClass : string = 'broker-table-row';
+  tableWrapHeightOnScroll : any;
   tableScrollClass : string = 'reorder-table-wrap';
   @ViewChild('reorderTable') reorderTable:any = ElementRef;
   tableHeight:any;
+  tableWidth:any;
+  @ViewChild("childElement") childElement:any =  ElementRef;
 
   constructor(public dialog: MatDialog) {
 
@@ -113,10 +117,19 @@ export class BrokerageUploadComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'quantity'];
   dataSource = ELEMENT_DATA;
 
+
+  ngAfterViewInit() {
+    this.tableHeight = (this.reorderTable.nativeElement.offsetHeight);
+    this.tableWidth = this.reorderTable.nativeElement.offsetWidth;
+    console.log("fdfdsf "+ this.reorderTable.nativeElement.offsetHeight)
+    this.tableWrapHeightOnScroll = Math.round(this.childElement.nativeElement.getBoundingClientRect().top);
+  }
+
   rowDrop(event: CdkDragDrop<string>) {
     const previousIndex = this.dataSource.findIndex(d => d === event.item.data);
     moveItemInArray(this.dataSource, previousIndex, event.currentIndex);
     this.table.renderRows();
+    this.tableHeight = (this.reorderTable.nativeElement.offsetHeight);
   }
 
   columnDrop(event: CdkDragDrop<string>) {
@@ -202,22 +215,25 @@ export class BrokerageUploadComponent implements OnInit {
     this.srchDropdwnStatus = ! this.srchDropdwnStatus;
   }
 
-  ngAfterViewInit() {
-    this.tableHeight = this.reorderTable.nativeElement.offsetHeight + 200;
-    //console.log("fdfdsf "+ this.reorderTable.nativeElement.offsetHeight)
-  }
-
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (document.body.scrollTop > 200 || (document.documentElement.scrollTop > 200 && document.documentElement.scrollTop < this.tableHeight))
-    {
-          this.tableScrollClass = 'reorder-table-wrap hdr-collaps';
+    //var rtr = document.getElementsByClassName("broker-table-row").target.offsetTop
+    //console.log(this.childElement.nativeElement.getBoundingClientRect());
+    
+    if (document.body.scrollTop > 140 || (document.documentElement.scrollTop > 140 && document.documentElement.scrollTop < this.tableHeight - 200))
+      {
+        this.tableWrapClass = 'broker-table-row hdr-collaps';
+        this.tableScrollClass = 'reorder-table-wrap hdr-collaps';
         
-        }else {
-          this.tableScrollClass = 'reorder-table-wrap';
-        }
+      }else {
+        this.tableWrapClass = 'broker-table-row';
+        this.tableScrollClass = 'reorder-table-wrap';
+      }
+      var rtr = Math.round(this.childElement.nativeElement.getBoundingClientRect().top);
+      this.tableWrapHeightOnScroll = rtr;
+      //console.log(this.tableWrapHeightOnScroll);
     }
       
-
+    
 
 }
