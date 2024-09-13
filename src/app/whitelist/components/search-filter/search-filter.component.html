@@ -1,0 +1,18 @@
+<div class="whtlst-search-filter">
+    <div class="whtlst-field-wrap">
+        <ng-multiselect-dropdown
+            class="normal single"
+            [placeholder]="'Select report type'"
+            [settings]="amcdropdownSettings"
+            [data]="amcnameList"
+            [(ngModel)]="selectedamcnameItems"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)"
+        >
+        </ng-multiselect-dropdown>
+    </div>
+    <button class="whtlst-search-btn">Go</button>
+    <button class="whtlst-search-rst-btn"><img src="assets/images/whitelist-reset-icon.svg" /></button>
+
+</div>
+

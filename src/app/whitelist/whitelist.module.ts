@@ -24,6 +24,7 @@ import { ExcelUploadDialogComponent } from './components/dialogs/excel-upload-di
 import { ShowHiddenRowsDialogComponent } from './components/dialogs/show-hidden-rows-dialog/show-hidden-rows-dialog.component';
 import { ShowHiddenColumnsDialogComponent } from './components/dialogs/show-hidden-columns-dialog/show-hidden-columns-dialog.component';
 import { PublishWarningDialogComponent } from './components/dialogs/publish-warning-dialog/publish-warning-dialog.component';
+import { SearchFilterComponent } from './components/search-filter/search-filter.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PublishWarningDialogComponent } from './components/dialogs/publish-warn
     ExcelUploadDialogComponent,
     ShowHiddenRowsDialogComponent,
     ShowHiddenColumnsDialogComponent,
-    PublishWarningDialogComponent
+    PublishWarningDialogComponent,
+    SearchFilterComponent
   ],
   imports: [
     CommonModule,

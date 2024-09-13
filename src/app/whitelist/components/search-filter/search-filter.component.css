@@ -1,0 +1,13 @@
+.whtlst-search-filter ::ng-deep .multiselect-dropdown{  font-family: 'Mulish', sans-serif !important;  }
+.whtlst-search-filter ::ng-deep .multiselect-dropdown .dropdown-btn{ font-size:13px !important; height: 45px !important; }
+.whtlst-search-filter ::ng-deep .multiselect-dropdown .dropdown-list li { padding: 6px 15px 6px !important; border-bottom: #e7e7e7 solid 1px !important; font-size: 13px !important; }
+.whtlst-search-filter ::ng-deep .multiselect-dropdown .dropdown-list li:last-child{ border: none !important; }
+.whtlst-search-filter ::ng-deep .multiselect-dropdown .dropdown-list li:hover{ background-color: rgb(232, 244, 255); }
+.whtlst-search-filter ::ng-deep .dropdown-list ul::-webkit-scrollbar { height: 5px !important; width: 5px !important; }
+.whtlst-search-filter ::ng-deep .dropdown-list ul::-webkit-scrollbar-track { background: #f1f1f1 !important; }
+.whtlst-search-filter ::ng-deep .dropdown-list ul::-webkit-scrollbar-thumb { background: #3d5bff !important; }
+.whtlst-search-filter ::ng-deep .dropdown-list ul::-webkit-scrollbar-thumb:hover { background: #283a9b !important; }
+.whtlst-search-rst-btn{ width:40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; padding: 0px; border: none; appearance: none; cursor: pointer; background: transparent; }
+.whtlst-search-rst-btn:focus{ outline: none; }
+.whtlst-search-rst-btn>img{ width: 24px; height: 24px; transition: all ease-in-out 0.3s; }
+.whtlst-search-rst-btn:hover>img{ transform: rotate(-10deg); }

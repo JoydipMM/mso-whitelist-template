@@ -203,7 +203,7 @@ export class BrokerageUploadComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.tableHeight = this.reorderTable.nativeElement.offsetHeight - 100;
+    this.tableHeight = this.reorderTable.nativeElement.offsetHeight + 200;
     //console.log("fdfdsf "+ this.reorderTable.nativeElement.offsetHeight)
   }
 

@@ -54,7 +54,7 @@
 /* multi select dropdown css start */
 .multiselect-dropdown{ border-radius: 5px; background-color: #EFF0F6; border-color: #EFF0F6; }
 .multiselect-dropdown .dropdown-btn{ border-color: #EFF0F6 !important; height: 42px; display: inline-flex !important; align-items: center; font-size: 11px !important; font-weight: 700 !important; color: #848484 !important; }
-.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ width: 32px !important;  background: url('./../images/dropdown-down-arrow.svg') no-repeat 15px 18px; background-position: center center !important; }
+.multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret{ width: 32px !important;  background: url('./../images/dropdown-down-arrow.svg') no-repeat 15px 18px; background-position: center center !important; top: 3px !important; }
 .multiselect-dropdown .dropdown-btn .dropdown-multiselect--active .dropdown-multiselect__caret{ background: url('./../images/dropdown-down-arrow.svg') no-repeat 4px 14px; }
 .multiselect-dropdown .dropdown-btn .dropdown-multiselect__caret:before{ display: none; }
 /* list box css */
@@ -266,7 +266,7 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 .dialog-field-label{ padding: 10px 0px; width: 30%; color: rgba(0, 0, 0, 1); font-size: 13px; font-weight: 700; margin: 0px; }
 .dialog-field-contentwrap{ flex: 1; position: relative; }
 /* .mat-dialog-content{ min-height: calc(100vh - 300px); max-height: calc(100vh - 200px); } */
-.mat-dialog-content{ max-height:calc(100vh - 200px); width:calc(100% + 50px); padding: 0px 15px; overflow: auto; margin-left: -15px; }
+.mat-dialog-content{ max-height:calc(100vh - 200px); width:calc(100% + 50px); padding: 10px 24px !important; overflow: auto; margin-left: -15px; }
 .mat-dialog-content::-webkit-scrollbar { height: 5px; width: 5px; border: 1px solid #d5d5d5; }
 .mat-dialog-content::-webkit-scrollbar-track { background: #f1f1f1; }
 .mat-dialog-content::-webkit-scrollbar-thumb { background: #3d5bff; }
@@ -355,6 +355,13 @@ ul.pagination li a[aria-label="Next"] span{ width: 100%; height: 100%; font-size
 .sm-radio .mat-radio-outer-circle { height: 15px !important; width: 15px !important; border-width: 2px !important; }
 .sm-radio .mat-radio-inner-circle{ height: 15px !important; width: 15px !important; }
 /* mat radio css ended */
+
+
+/* search filter dropdown css start */
+.filter-search-overlay{ position: absolute; right: 0px; top: 42px; z-index: 91; }
+.whtlst-search-filter{ min-width: 382px; height: auto; padding: 5px; display: inline-flex; gap: 9px; position: relative; }
+.whtlst-search-btn{ background-color: rgba(69, 143, 246, 1); border: rgba(69, 143, 246, 1) solid 1px; min-width: 118px; height: 44px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; color: #fff; font-size: 16px; font-weight: 700; appearance: none; cursor: pointer; }
+/* search filter dropdown css ended */
 
 
 
